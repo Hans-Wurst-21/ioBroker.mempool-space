@@ -1,0 +1,423 @@
+{
+    "common": {
+        "name": "mempool-space",
+        "version": "0.0.1",
+        "news": {
+            "0.0.1": {
+                "en": "initial release",
+                "de": "Erstveröffentlichung",
+                "ru": "Начальная версия",
+                "pt": "lançamento inicial",
+                "nl": "Eerste uitgave",
+                "fr": "Première version",
+                "it": "Versione iniziale",
+                "es": "Versión inicial",
+                "pl": "Pierwsze wydanie",
+                "uk": "Початкова версія",
+                "zh-cn": "首次出版"
+            }
+        },
+        "titleLang": {
+            "en": "Mempool.space WS",
+            "de": "Mempool.space WS",
+            "ru": "Mempool.space WS",
+            "pt": "Mempool.space WS",
+            "nl": "Mempool.space WS",
+            "fr": "Mempool.space WS",
+            "it": "Mempool.space WS",
+            "es": "Mempool.space WS",
+            "pl": "Mempool.space WS",
+            "uk": "Mempool.space WS",
+            "zh-cn": "Mempool.space WS"
+        },
+        "desc": {
+            "en": "Mempool.space websocket",
+            "de": "Mempool.space websocket",
+            "ru": "Mempool.space websocket",
+            "pt": "Mempool.space websocket",
+            "nl": "Mempool.space websocket",
+            "fr": "Mempool.space websocket",
+            "it": "Mempool.space websocket",
+            "es": "Mempool.space websocket",
+            "pl": "Mempool.space websocket",
+            "uk": "Mempool.space websocket",
+            "zh-cn": "Mempool.space websocket"
+        },
+        "authors": ["Hans-Wurst-21 <mail@hansmail.net>"],
+        "keywords": ["ioBroker", "template", "Smart Home", "home automation"],
+        "licenseInformation": {
+            "type": "free",
+            "license": "MIT"
+        },
+        "platform": "Javascript/Node.js",
+        "icon": "mempool-space.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/Hans-Wurst-21/ioBroker.mempool-space/main/admin/mempool-space.png",
+        "readme": "https://github.com/Hans-Wurst-21/ioBroker.mempool-space/blob/main/README.md",
+        "loglevel": "info",
+        "tier": 3,
+        "mode": "daemon",
+        "type": "infrastructure",
+        "compact": true,
+        "connectionType": "cloud",
+        "dataSource": "push",
+        "adminUI": {
+            "config": "json"
+        },
+        "dependencies": [
+            {
+                "js-controller": ">=6.0.11"
+            }
+        ],
+        "globalDependencies": [
+            {
+                "admin": "7.2.6"
+            }
+        ]
+    },
+    "native": {
+        "websocketUrl": "wss://mempool.space/api/v1/ws"
+    },
+    "objects": [],
+    "instanceObjects": [
+        {
+            "_id": "conversion",
+            "type": "channel",
+            "common": {
+                "name": "Currency Conversion"
+            },
+            "native": {}
+        },
+        {
+            "_id": "conversion.usd",
+            "type": "state",
+            "common": {
+                "name": "USD Conversion",
+                "type": "number",
+                "role": "value",
+                "read": true,
+                "write": false,
+                "desc": "Bitcoin to USD conversion rate"
+            }
+        },
+        {
+            "_id": "conversion.eur",
+            "type": "state",
+            "common": {
+                "name": "EUR Conversion",
+                "type": "number",
+                "role": "value",
+                "read": true,
+                "write": false,
+                "desc": "Bitcoin to EUR conversion rate"
+            }
+        },
+        {
+            "_id": "conversion.timestamp",
+            "type": "state",
+            "common": {
+                "name": "Conversion Timestamp",
+                "type": "number",
+                "role": "value.time",
+                "read": true,
+                "write": false,
+                "desc": "Timestamp of the currency conversion"
+            }
+        },
+        {
+            "_id": "conversion.moscowtimeUSD",
+            "type": "state",
+            "common": {
+                "name": "Moscow Time USD",
+                "type": "string",
+                "role": "text",
+                "read": true,
+                "write": false,
+                "desc": "Number of Satoshis per 1 USD in Moscow Time format"
+            }
+        },
+        {
+            "_id": "conversion.moscowtimeEUR",
+            "type": "state",
+            "common": {
+                "name": "Moscow Time EUR",
+                "type": "string",
+                "role": "text",
+                "read": true,
+                "write": false,
+                "desc": "Number of Satoshis per 1 EUR in Moscow Time format"
+            }
+        },
+        {
+            "_id": "fees",
+            "type": "channel",
+            "common": {
+                "name": "Transaction Fees"
+            },
+            "native": {}
+        },
+        {
+            "_id": "fees.fastest",
+            "type": "state",
+            "common": {
+                "name": "Fastest Fee",
+                "type": "number",
+                "role": "value",
+                "read": true,
+                "write": false,
+                "desc": "Fastest transaction fee"
+            }
+        },
+        {
+            "_id": "fees.halfHour",
+            "type": "state",
+            "common": {
+                "name": "Half Hour Fee",
+                "type": "number",
+                "role": "value",
+                "read": true,
+                "write": false,
+                "desc": "Fee for confirmation within half an hour"
+            }
+        },
+        {
+            "_id": "fees.hour",
+            "type": "state",
+            "common": {
+                "name": "Hour Fee",
+                "type": "number",
+                "role": "value",
+                "read": true,
+                "write": false,
+                "desc": "Fee for confirmation within an hour"
+            }
+        },
+        {
+            "_id": "fees.economy",
+            "type": "state",
+            "common": {
+                "name": "Economy Fee",
+                "type": "number",
+                "role": "value",
+                "read": true,
+                "write": false,
+                "desc": "Economy transaction fee"
+            }
+        },
+        {
+            "_id": "fees.minimum",
+            "type": "state",
+            "common": {
+                "name": "Minimum Fee",
+                "type": "number",
+                "role": "value",
+                "read": true,
+                "write": false,
+                "desc": "Minimum transaction fee"
+            }
+        },
+        {
+            "_id": "block",
+            "type": "channel",
+            "common": {
+                "name": "Block Information"
+            },
+            "native": {}
+        },
+        {
+            "_id": "block.height",
+            "type": "state",
+            "common": {
+                "name": "Block Height",
+                "type": "number",
+                "role": "value",
+                "read": true,
+                "write": false,
+                "desc": "Height of the latest block"
+            }
+        },
+        {
+            "_id": "block.hash",
+            "type": "state",
+            "common": {
+                "name": "Block Hash",
+                "type": "string",
+                "role": "text",
+                "read": true,
+                "write": false,
+                "desc": "Hash of the latest block"
+            }
+        },
+        {
+            "_id": "block.timestamp",
+            "type": "state",
+            "common": {
+                "name": "Block Timestamp",
+                "type": "number",
+                "role": "value.time",
+                "read": true,
+                "write": false,
+                "desc": "Timestamp of the latest block"
+            }
+        },
+        {
+            "_id": "block.timeSinceLastBlock",
+            "type": "state",
+            "common": {
+                "name": "Time Since Last Block",
+                "type": "string",
+                "role": "text",
+                "read": true,
+                "write": false,
+                "desc": "Time elapsed since the last block"
+            }
+        },
+        {
+            "_id": "block.miningPool",
+            "type": "state",
+            "common": {
+                "name": "Mining Pool",
+                "type": "string",
+                "role": "text",
+                "read": true,
+                "write": false,
+                "desc": "Name of the pool that mined the last block"
+            }
+        },
+        {
+            "_id": "status",
+            "type": "channel",
+            "common": {
+                "name": "Status Information"
+            },
+            "native": {}
+        },
+        {
+            "_id": "status.websocketConnection",
+            "type": "state",
+            "common": {
+                "name": "WebSocket Connection Status",
+                "type": "boolean",
+                "role": "indicator.connected",
+                "read": true,
+                "write": false,
+                "desc": "Indicates if the WebSocket connection is active"
+            }
+        },
+        {
+            "_id": "network",
+            "type": "channel",
+            "common": {
+                "name": "Network Information"
+            },
+            "native": {}
+        },
+        {
+            "_id": "network.averageBlockTime",
+            "type": "state",
+            "common": {
+                "name": "Average Block Time",
+                "type": "number",
+                "role": "value",
+                "unit": "min",
+                "read": true,
+                "write": false,
+                "desc": "Average time between blocks in minutes"
+            }
+        },
+        {
+            "_id": "network.difficultyChange",
+            "type": "state",
+            "common": {
+                "name": "Difficulty Change",
+                "type": "number",
+                "role": "value",
+                "unit": "%",
+                "read": true,
+                "write": false,
+                "desc": "Current difficulty adjustment in percent"
+            }
+        },
+        {
+            "_id": "network.previousDifficultyChange",
+            "type": "state",
+            "common": {
+                "name": "Previous Difficulty Change",
+                "type": "number",
+                "role": "value",
+                "unit": "%",
+                "read": true,
+                "write": false,
+                "desc": "Previous difficulty adjustment in percent"
+            }
+        },
+        {
+            "_id": "network.nextDifficultyAdjustment",
+            "type": "state",
+            "common": {
+                "name": "Next Difficulty Adjustment",
+                "type": "number",
+                "role": "value.time",
+                "read": true,
+                "write": false,
+                "desc": "Estimated timestamp of the next difficulty adjustment"
+            }
+        },
+        {
+            "_id": "network.remainingTimeToDifficulty",
+            "type": "state",
+            "common": {
+                "name": "Remaining Time to Difficulty Adjustment",
+                "type": "string",
+                "role": "text",
+                "read": true,
+                "write": false,
+                "desc": "Remaining time until the next difficulty adjustment"
+            }
+        },
+        {
+            "_id": "network.nextHalving",
+            "type": "state",
+            "common": {
+                "name": "Next Halving",
+                "type": "number",
+                "role": "value.time",
+                "read": true,
+                "write": false,
+                "desc": "Estimated timestamp of the next halving"
+            }
+        },
+        {
+            "_id": "network.remainingTimeToHalving",
+            "type": "state",
+            "common": {
+                "name": "Remaining Time to Halving",
+                "type": "string",
+                "role": "text",
+                "read": true,
+                "write": false,
+                "desc": "Remaining time until the next halving"
+            }
+        },
+        {
+            "_id": "mempool",
+            "type": "channel",
+            "common": {
+                "name": "Mempool Information"
+            },
+            "native": {}
+        },
+        {
+            "_id": "mempool.transactionCount",
+            "type": "state",
+            "common": {
+                "name": "Unconfirmed Transactions",
+                "type": "number",
+                "role": "value",
+                "read": true,
+                "write": false,
+                "desc": "Number of unconfirmed transactions in the mempool"
+            }
+        }
+    ]
+}
