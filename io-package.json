@@ -43,7 +43,7 @@
             "uk": "Mempool.space websocket",
             "zh-cn": "Mempool.space websocket"
         },
-        "authors": ["Hans-Wurst-21 <mail@hansmail.net>"],
+        "authors": ["Hans-Wurst-21 <github+mempool-space@hansmail.net>"],
         "keywords": ["ioBroker", "Bitcoin", "Mempool", "homeautomation", "fixthemoneyfixtheworld"],
         "licenseInformation": {
             "type": "free",

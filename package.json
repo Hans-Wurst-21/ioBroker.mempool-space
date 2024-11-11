@@ -4,7 +4,7 @@
   "description": "Mempool.space Websocket",
   "author": {
     "name": "Hans-Wurst-21",
-    "email": "mail@hansmail.net"
+    "email": "github+mempool-space@hansmail.net"
   },
   "homepage": "https://github.com/Hans-Wurst-21/ioBroker.mempool-space",
   "license": "MIT",

@@ -46,7 +46,7 @@ You can check other adapters for examples or ask in the developer community. Usi
 
 MIT License
 
-Copyright (c) 2024 Hans-Wurst-21 <mail@hansmail.net>
+Copyright (c) 2024 Hans-Wurst-21 <github+mempool-space@hansmail.net>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
