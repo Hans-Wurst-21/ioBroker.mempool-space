@@ -16,31 +16,112 @@
 
 **Tests:** ![Test and Release](https://github.com/Hans-Wurst-21/ioBroker.mempool-space/workflows/Test%20and%20Release/badge.svg)
 
-## mempool.space adapter for ioBroker
+## mempool.space for ioBroker
 
-Live data from mempool.space websocket.
+## Experience the Bitcoin network up close in your home!
+
+Live data from mempool.space WebSocket API.
 
 Connect the bitcoin Network to your smarthome.
 
+This adapter provides real-time Bitcoin network information using WebSocket connections to the mempool.space API. It offers a wide range of data points including price conversions, transaction fees, block information, and network statistics.
+
 ## Live data websocket
 
-This section is intended for the developer. It can be deleted later.
+**Important: The adapter or mempool.space will never ask for your seed!**
+**NEVER!**
+**If you share your seed you will lose 100% of everything!**
 
-### DISCLAIMER
+### Features
 
-Please make sure that you consider copyrights and trademarks when you use names or logos of a company and add a disclaimer to your README.
-You can check other adapters for examples or ask in the developer community. Using a name or logo of a company without permission may cause legal problems for you.
+1. **Real-time Data**: Utilizes WebSocket connections for live updates from the Bitcoin network.
+
+2. **Price Conversions**:
+
+    - Bitcoin to USD and EUR conversion rates
+    - "Moscow Time" representation (Satoshis per USD/EUR)
+
+3. **Transaction Fees**:
+
+    - Fastest, Half-Hour, Hour, Economy, and Minimum fee rates
+
+4. **Block Information**:
+
+    - Latest block height, hash, and timestamp
+    - Time since last block
+    - Mining pool that mined the last block
+
+5. **Network Statistics**:
+
+    - Average block time
+    - Current and previous difficulty adjustments
+    - Estimated time until next difficulty adjustment
+    - Estimated time until next halving
+
+6. **Mempool Information**:
+    - Number of unconfirmed transactions
+
+### Configuration
+
+In the adapter settings, you can configure the following option:
+
+-   **WebSocket URL**: The URL for the mempool.space WebSocket API (default: wss://mempool.space/api/v1/ws)
+
+### States
+
+The adapter creates the following channels and states:
+
+-   **conversion**
+
+    -   usd: Bitcoin to USD conversion rate
+    -   eur: Bitcoin to EUR conversion rate
+    -   timestamp: Timestamp of the last conversion update
+    -   moscowtimeUSD: Moscow Time representation for USD
+    -   moscowtimeEUR: Moscow Time representation for EUR
+
+-   **fees**
+
+    -   fastest: Fastest transaction fee rate
+    -   halfHour: Fee rate for confirmation within half an hour
+    -   hour: Fee rate for confirmation within an hour
+    -   economy: Economy fee rate
+    -   minimum: Minimum fee rate
+
+-   **block**
+
+    -   height: Height of the latest block
+    -   hash: Hash of the latest block
+    -   timestamp: Timestamp of the latest block
+    -   timeSinceLastBlock: Time elapsed since the last block
+    -   miningPool: Name of the pool that mined the last block
+
+-   **network**
+
+    -   averageBlockTime: Average time between blocks (in minutes)
+    -   difficultyChange: Current difficulty adjustment (in percent)
+    -   previousDifficultyChange: Previous difficulty adjustment (in percent)
+    -   nextDifficultyAdjustment: Estimated timestamp of the next difficulty adjustment
+    -   remainingTimeToDifficulty: Remaining time until the next difficulty adjustment
+    -   remainingTimeToHalving: Remaining time until the next halving
+
+-   **mempool**
+
+    -   transactionCount: Number of unconfirmed transactions in the mempool
+
+-   **status**
+    -   websocketConnection: Indicates if the WebSocket connection is active
 
 ## Changelog
 
-<!--
-    Placeholder for the next version (at the beginning of the line):
-    ### **WORK IN PROGRESS**
--->
+### 0.0.1
 
-### **WORK IN PROGRESS**
+-   (Hans-Wurst-21) initial release
 
--   (mempool-space) initial release
+## Special Thanks
+
+A special thanks to einundzwanzig.space for their support and resources.
+**Plebs together strong!**  
+**Not your keys, not your coin!**
 
 ## License
 
