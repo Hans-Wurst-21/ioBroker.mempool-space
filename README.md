@@ -117,10 +117,15 @@ The adapter creates automatically the following channels and states:
 
 -   (Hans-Wurst-21) initial release
 
+## To-do
+
+-   [ ] Query of user-defined addresses
+-   [ ] Query of user-defined transactions
+
 ## Special Thanks
 
-A special thanks to einundzwanzig.space for their support and resources.
-**Plebs together strong!**  
+A special thanks to einundzwanzig.space
+**Plebs together strong!**
 **Not your keys, not your coin!**
 
 ## License
