@@ -18,7 +18,7 @@
 
 ## mempool.space for ioBroker
 
-## Experience the Bitcoin network up close in your home!
+### Experience the Bitcoin network up close in your home!
 
 Live data from mempool.space WebSocket API.
 
@@ -69,15 +69,15 @@ In the adapter settings, you can configure the following option:
 
 ### States
 
-The adapter creates the following channels and states:
+The adapter creates automatically the following channels and states:
 
 -   **conversion**
 
     -   usd: Bitcoin to USD conversion rate
     -   eur: Bitcoin to EUR conversion rate
+    -   moscowtimeUSD: Moscow-Time USD
+    -   moscowtimeEUR: Moscow-Time EUR
     -   timestamp: Timestamp of the last conversion update
-    -   moscowtimeUSD: Moscow Time representation for USD
-    -   moscowtimeEUR: Moscow Time representation for EUR
 
 -   **fees**
 
@@ -92,12 +92,12 @@ The adapter creates the following channels and states:
     -   height: Height of the latest block
     -   hash: Hash of the latest block
     -   timestamp: Timestamp of the latest block
-    -   timeSinceLastBlock: Time elapsed since the last block
     -   miningPool: Name of the pool that mined the last block
+    -   timeSinceLastBlock: Time elapsed since the last block
 
 -   **network**
 
-    -   averageBlockTime: Average time between blocks (in minutes)
+    -   averageBlockTime: Average Blocktime
     -   difficultyChange: Current difficulty adjustment (in percent)
     -   previousDifficultyChange: Previous difficulty adjustment (in percent)
     -   nextDifficultyAdjustment: Estimated timestamp of the next difficulty adjustment
