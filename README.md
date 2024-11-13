@@ -111,6 +111,12 @@ The adapter creates automatically the following channels and states:
 -   **status**
     -   websocketConnection: Indicates if the WebSocket connection is active
 
+## Library
+
+-   API-Documentation: https://mempool.space/docs/api/websocket
+-   npm-Module: https://www.npmjs.com/package/@mempool/mempool.js
+-   luxon-Module: https://github.com/moment/luxon
+
 ## Changelog
 
 ### 0.0.1
@@ -124,7 +130,9 @@ The adapter creates automatically the following channels and states:
 
 ## Special Thanks
 
-A special thanks to einundzwanzig.space
+A special thanks to https://einundzwanzig.space
+and https://www.youtube.com/@haus_automation
+
 **Plebs together strong!**
 **Not your keys, not your coin!**
 

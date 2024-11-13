@@ -81,6 +81,27 @@
     "objects": [],
     "instanceObjects": [
         {
+            "_id": "info",
+            "type": "channel",
+            "common": {
+                "name": "Information"
+            },
+            "native": {}
+        },
+        {
+            "_id": "info.connection",
+            "type": "state",
+            "common": {
+                "role": "indicator.connected",
+                "name": "Device or service connected",
+                "type": "boolean",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        },
+        {
             "_id": "conversion",
             "type": "channel",
             "common": {
@@ -526,7 +547,7 @@
                     "zh-cn": "WebSocket Connection Status"
                 },
                 "type": "boolean",
-                "role": "indicator.connected",
+                "role": "indicator.",
                 "read": true,
                 "write": false,
                 "desc": "Indicates if the WebSocket connection is active"

@@ -4,7 +4,7 @@ const utils = require('@iobroker/adapter-core');
 const mempoolJS = require('@mempool/mempool.js');
 const { DateTime } = require('luxon');
 
-class mempoolspace extends utils.Adapter {
+class MempoolSpace extends utils.Adapter {
     constructor(options) {
         super({
             ...options,
@@ -17,7 +17,7 @@ class mempoolspace extends utils.Adapter {
     }
 
     async onReady() {
-        this.log.info('mempool.space adapter is ready');
+        this.log.info('mempool-space adapter is ready');
 
         const websocketUrl = this.config.websocketUrl || 'wss://mempool.space/api/v1/ws';
 
@@ -46,7 +46,7 @@ class mempoolspace extends utils.Adapter {
         this.ws.on('close', this.handleWebSocketClose.bind(this));
         this.ws.on('open', this.handleWebSocketOpen.bind(this));
 
-        this.setStateAsync('status.websocketConnection', { val: false, ack: true });
+        this.setStateAsync('info.connection', { val: false, ack: true });
     }
 
     handleWebSocketMessage(data) {
@@ -203,17 +203,17 @@ class mempoolspace extends utils.Adapter {
 
     handleWebSocketError(error) {
         this.log.error(`WebSocket error: ${error}`);
-        this.setStateAsync('status.websocketConnection', { val: false, ack: true });
+        this.setStateAsync('info.connection', { val: false, ack: true });
     }
 
     handleWebSocketClose() {
         this.log.info('WebSocket connection closed');
-        this.setStateAsync('status.websocketConnection', { val: false, ack: true });
+        this.setStateAsync('info.connection', { val: false, ack: true });
     }
 
     handleWebSocketOpen() {
         this.log.info('WebSocket connection opened');
-        this.setStateAsync('status.websocketConnection', { val: true, ack: true });
+        this.setStateAsync('info.connection', { val: true, ack: true });
     }
 
     onUnload(callback) {
@@ -233,7 +233,7 @@ class mempoolspace extends utils.Adapter {
 }
 
 if (require.main !== module) {
-    module.exports = (options) => new mempoolspace(options);
+    module.exports = (options) => new MempoolSpace(options);
 } else {
-    new mempoolspace();
+    new MempoolSpace();
 }
