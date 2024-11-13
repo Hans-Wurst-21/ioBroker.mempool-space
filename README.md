@@ -129,6 +129,7 @@ The adapter creates automatically the following channels and states:
 
 -   [ ] Query of user-defined addresses
 -   [ ] Query of user-defined transactions
+-   [ ] Maybe telegram-bot
 
 ## Special Thanks
 

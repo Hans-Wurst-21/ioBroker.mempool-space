@@ -4,7 +4,7 @@
     "items": {
         "websocketUrl": {
             "type": "text",
-            "label": "WebSocket URL",
+            "label": "WebSocket URL (default: wss://mempool.space/api/v1/ws",
             "default": "wss://mempool.space/api/v1/ws"
         }
     }
