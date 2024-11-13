@@ -18,6 +18,8 @@
 
 ## mempool.space for ioBroker
 
+## The adapter is under development and can change daily! Not intended for productive use.
+
 ### Experience the Bitcoin network up close in your home!
 
 Live data from mempool.space WebSocket API.
@@ -110,8 +112,8 @@ The adapter creates automatically the following channels and states:
 
     -   transactionCount: Number of unconfirmed transactions in the mempool
 
--   **status**
-    -   websocketConnection: Indicates if the WebSocket connection is active
+-   **info**
+    -   connectionn: Indicates if the WebSocket connection is active
 
 ## Library
 
@@ -127,6 +129,9 @@ The adapter creates automatically the following channels and states:
 
 ## To-do
 
+-   [ ] Complete translation
+-   [ ] Clean up code
+-   [ ] Add examples
 -   [ ] Query of user-defined addresses
 -   [ ] Query of user-defined transactions
 -   [ ] Maybe telegram-bot

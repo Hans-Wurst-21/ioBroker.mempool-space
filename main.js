@@ -1,5 +1,4 @@
 'use strict';
-
 const utils = require('@iobroker/adapter-core');
 const mempoolJS = require('@mempool/mempool.js');
 const { DateTime } = require('luxon');
@@ -183,6 +182,7 @@ class MempoolSpace extends utils.Adapter {
             if (state && typeof state.val === 'number') {
                 const currentBlockHeight = state.val;
                 const nextHalvingBlock = Math.ceil(currentBlockHeight / 210000) * 210000;
+
                 const blocksUntilHalving = nextHalvingBlock - currentBlockHeight;
                 const minutesUntilHalving = blocksUntilHalving * 10; // Annahme: 10 Minuten pro Block im Durchschnitt
 

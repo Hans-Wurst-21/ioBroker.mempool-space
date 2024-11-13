@@ -509,50 +509,7 @@
                 "desc": "Name of the pool that mined the last block"
             }
         },
-        {
-            "_id": "status",
-            "type": "channel",
-            "common": {
-                "name": {
-                    "en": "Status Information",
-                    "de": "Status-Informationen",
-                    "ru": "Информация о состоянии",
-                    "pt": "Informações sobre o estado",
-                    "nl": "Statusinformatie",
-                    "fr": "Informations sur le statut",
-                    "it": "Informazioni sullo stato",
-                    "es": "Información de estado",
-                    "pl": "Informacje o stanie",
-                    "uk": "Інформація про стан",
-                    "zh-cn": "Status Information"
-                }
-            },
-            "native": {}
-        },
-        {
-            "_id": "status.websocketConnection",
-            "type": "state",
-            "common": {
-                "name": {
-                    "en": "WebSocket Connection Status",
-                    "de": "WebSocket Verbindungsstatus",
-                    "ru": "Состояние соединения WebSocket",
-                    "pt": "Estado da ligação WebSocket",
-                    "nl": "WebSocket verbindingsstatus",
-                    "fr": "État de la connexion WebSocket",
-                    "it": "Stato della connessione WebSocket",
-                    "es": "Estado de la conexión WebSocket",
-                    "pl": "Status połączenia WebSocket",
-                    "uk": "Стан з'єднання з WebSocket",
-                    "zh-cn": "WebSocket Connection Status"
-                },
-                "type": "boolean",
-                "role": "indicator.",
-                "read": true,
-                "write": false,
-                "desc": "Indicates if the WebSocket connection is active"
-            }
-        },
+
         {
             "_id": "network",
             "type": "channel",
