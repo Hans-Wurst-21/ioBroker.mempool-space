@@ -29,7 +29,9 @@ This adapter provides real-time Bitcoin network information using WebSocket conn
 ## Live data websocket
 
 **Important: The adapter or mempool.space will never ask for your seed!**
-**NEVER!**
+
+**⚠️ NEVER ⚠️**
+
 **If you share your seed you will lose 100% of everything!**
 
 ### Features
@@ -131,9 +133,11 @@ The adapter creates automatically the following channels and states:
 ## Special Thanks
 
 A special thanks to https://einundzwanzig.space
+
 and https://www.youtube.com/@haus_automation
 
 **Plebs together strong!**
+
 **Not your keys, not your coin!**
 
 ## License
