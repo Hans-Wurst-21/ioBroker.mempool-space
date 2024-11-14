@@ -654,30 +654,6 @@
             }
         },
         {
-            "_id": "network.nextHalving",
-            "type": "state",
-            "common": {
-                "name": {
-                    "en": "Next Halving",
-                    "de": "Nächste Halving",
-                    "ru": "Следующее уменьшение в два раза",
-                    "pt": "Próxima redução para metade",
-                    "nl": "Volgende Halvering",
-                    "fr": "Prochaine réduction de moitié",
-                    "it": "Prossimo dimezzamento",
-                    "es": "Próxima reducción a la mitad",
-                    "pl": "Następne zmniejszenie o połowę",
-                    "uk": "Наступна половина",
-                    "zh-cn": "Next Halving"
-                },
-                "type": "number",
-                "role": "value.time",
-                "read": true,
-                "write": false,
-                "desc": "Estimated timestamp of the next halving"
-            }
-        },
-        {
             "_id": "network.remainingTimeToHalving",
             "type": "state",
             "common": {
