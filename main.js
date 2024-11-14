@@ -226,6 +226,7 @@ class MempoolSpace extends utils.Adapter {
                 clearInterval(this.updateInterval);
             }
             callback();
+            // eslint-disable-next-line no-unused-vars
         } catch (e) {
             callback();
         }

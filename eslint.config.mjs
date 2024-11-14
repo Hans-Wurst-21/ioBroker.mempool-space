@@ -24,6 +24,8 @@ export default [
             globals: {
                 ...globals.node,
                 ...globals.mocha,
+                // test der Zeile darunter
+                ...globals.es6,
             },
 
             ecmaVersion: 'latest',
