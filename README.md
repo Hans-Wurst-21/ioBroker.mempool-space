@@ -69,6 +69,12 @@ In the adapter settings, you can configure the following option:
     The URL for the mempool.space WebSocket API
     (default: `wss://mempool.space/api/v1/ws`)
 
+-   You can use a public or local mempool.space instance.
+-   For a local instance, refer to the documentation of your bitcoin node software.
+
+No further configuration is required.
+All states and connections are created automatically by the adapter.
+
 ### States
 
 The adapter creates automatically the following channels and states:
