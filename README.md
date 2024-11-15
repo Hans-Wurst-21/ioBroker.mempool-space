@@ -16,17 +16,13 @@
 
 **Tests:** ![Test and Release](https://github.com/Hans-Wurst-21/ioBroker.mempool-space/workflows/Test%20and%20Release/badge.svg)
 
-## mempool.space for ioBroker
-
 ## The adapter is under development and can change daily! Not intended for productive use.
 
 ### Experience the Bitcoin network up close in your home!
 
 Live data from mempool.space WebSocket API.
 
-Connect the bitcoin Network to your smarthome.
-
-This adapter provides real-time Bitcoin network information using WebSocket connections to the mempool.space API. It offers a wide range of data points including price conversions, transaction fees, block information, and network statistics.
+This adapter provides real-time Bitcoin network information using WebSocket connections to the mempool.space API. It offers a wide range of data points including block information, transaction fees, network statistics ans price conversions ()
 
 ## Live data websocket
 
@@ -69,7 +65,9 @@ This adapter provides real-time Bitcoin network information using WebSocket conn
 
 In the adapter settings, you can configure the following option:
 
--   **WebSocket URL**: The URL for the mempool.space WebSocket API (default: wss://mempool.space/api/v1/ws)
+-   **WebSocket URL**:
+    The URL for the mempool.space WebSocket API
+    (default: `wss://mempool.space/api/v1/ws`)
 
 ### States
 
@@ -139,12 +137,7 @@ The adapter creates automatically the following channels and states:
 ## Special Thanks
 
 A special thanks to https://einundzwanzig.space
-
 and https://www.youtube.com/@haus_automation
-
-**Plebs together strong!**
-
-**Not your keys, not your coin!**
 
 ## License
 
