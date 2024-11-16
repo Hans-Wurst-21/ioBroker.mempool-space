@@ -9,6 +9,7 @@
   "homepage": "https://github.com/Hans-Wurst-21/ioBroker.mempool-space",
   "license": "MIT",
   "keywords": [
+    "ioBroker",
     "Bitcoin",
     "Mempool.space",
     "mempool",
