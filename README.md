@@ -127,7 +127,12 @@ The adapter creates automatically the following channels and states:
 
 ## Changelog
 
-### 0.0.1
+### 0.0.2 (2024-11-16)
+
+-   (Hans-Wurst-21) fix issue from ioBroker-Bot
+-   (Hans-Wurst-21) prepare for npm upload
+
+### 0.0.1 (2024-11-15)
 
 -   (Hans-Wurst-21) initial release
 

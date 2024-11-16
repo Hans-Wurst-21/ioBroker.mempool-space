@@ -4,8 +4,12 @@
     "items": {
         "websocketUrl": {
             "type": "text",
-            "label": "WebSocket URL (default: wss://mempool.space/api/v1/ws",
-            "default": "wss://mempool.space/api/v1/ws"
+            "label": "WebSocket URL (default: wss://mempool.space/api/v1/ws)",
+            "default": "wss://mempool.space/api/v1/ws",
+            "xs": 12,
+            "sm": 12,
+            "md": 4,
+            "lg": 4
         }
     }
 }
