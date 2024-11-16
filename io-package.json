@@ -1,725 +1,744 @@
 {
-    "common": {
-        "name": "mempool-space",
-        "version": "0.0.1",
-        "news": {
-            "0.0.1": {
-                "en": "initial release",
-                "de": "Erstveröffentlichung",
-                "ru": "Начальная версия",
-                "pt": "lançamento inicial",
-                "nl": "Eerste uitgave",
-                "fr": "Première version",
-                "it": "Versione iniziale",
-                "es": "Versión inicial",
-                "pl": "Pierwsze wydanie",
-                "uk": "Початкова версія",
-                "zh-cn": "首次出版"
-            }
-        },
-        "titleLang": {
-            "en": "Mempool.space WS",
-            "de": "Mempool.space WS",
-            "ru": "Mempool.space WS",
-            "pt": "Mempool.space WS",
-            "nl": "Mempool.space WS",
-            "fr": "Mempool.space WS",
-            "it": "Mempool.space WS",
-            "es": "Mempool.space WS",
-            "pl": "Mempool.space WS",
-            "uk": "Mempool.space WS",
-            "zh-cn": "Mempool.space WS"
-        },
-        "desc": {
-            "en": "Mempool.space websocket",
-            "de": "Mempool.space websocket",
-            "ru": "Mempool.space websocket",
-            "pt": "Mempool.space websocket",
-            "nl": "Mempool.space websocket",
-            "fr": "Mempool.space websocket",
-            "it": "Mempool.space websocket",
-            "es": "Mempool.space websocket",
-            "pl": "Mempool.space websocket",
-            "uk": "Mempool.space websocket",
-            "zh-cn": "Mempool.space websocket"
-        },
-        "authors": ["Hans-Wurst-21 <github+mempool-space@hansmail.net>"],
-        "keywords": ["Bitcoin", "Mempool.space", "mempool", "fixthemoneyfixtheworld"],
-        "licenseInformation": {
-            "type": "free",
-            "license": "MIT"
-        },
-        "platform": "Javascript/Node.js",
-        "icon": "mempool-space.png",
-        "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/Hans-Wurst-21/ioBroker.mempool-space/main/admin/mempool-space.png",
-        "readme": "https://github.com/Hans-Wurst-21/ioBroker.mempool-space/blob/main/README.md",
-        "loglevel": "info",
-        "tier": 3,
-        "mode": "daemon",
-        "type": "infrastructure",
-        "compact": true,
-        "connectionType": "cloud",
-        "dataSource": "push",
-        "adminUI": {
-            "config": "json"
-        },
-        "dependencies": [
-            {
-                "js-controller": ">=6.0.11"
-            }
-        ],
-        "globalDependencies": [
-            {
-                "admin": ">=7.2.6"
-            }
-        ]
+  "common": {
+    "name": "mempool-space",
+    "version": "0.0.2",
+    "news": {
+      "0.0.2": {
+        "en": "npm release",
+        "de": "npm release",
+        "ru": "npm релиз",
+        "pt": "liberação npm",
+        "nl": "npm release",
+        "fr": "npm libération",
+        "it": "npm rilascio",
+        "es": "npm de liberación",
+        "pl": "uwolnienie npm",
+        "uk": "npm реліз",
+        "zh-cn": "npm 发布"
+      },
+      "0.0.1": {
+        "en": "initial release",
+        "de": "Erstveröffentlichung",
+        "ru": "Начальная версия",
+        "pt": "lançamento inicial",
+        "nl": "Eerste uitgave",
+        "fr": "Première version",
+        "it": "Versione iniziale",
+        "es": "Versión inicial",
+        "pl": "Pierwsze wydanie",
+        "uk": "Початкова версія",
+        "zh-cn": "首次出版"
+      }
     },
-    "native": {
-        "websocketUrl": "wss://mempool.space/api/v1/ws"
+    "titleLang": {
+      "en": "Mempool.space WS",
+      "de": "Mempool.space WS",
+      "ru": "Mempool.space WS",
+      "pt": "Mempool.space WS",
+      "nl": "Mempool.space WS",
+      "fr": "Mempool.space WS",
+      "it": "Mempool.space WS",
+      "es": "Mempool.space WS",
+      "pl": "Mempool.space WS",
+      "uk": "Mempool.space WS",
+      "zh-cn": "Mempool.space WS"
     },
-    "objects": [],
-    "instanceObjects": [
-        {
-            "_id": "info",
-            "type": "channel",
-            "common": {
-                "name": "Information"
-            },
-            "native": {}
-        },
-        {
-            "_id": "info.connection",
-            "type": "state",
-            "common": {
-                "role": "indicator.connected",
-                "name": "Device or service connected",
-                "type": "boolean",
-                "read": true,
-                "write": false,
-                "def": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "conversion",
-            "type": "channel",
-            "common": {
-                "name": "Currency Conversion"
-            },
-            "native": {}
-        },
-        {
-            "_id": "conversion.usd",
-            "type": "state",
-            "common": {
-                "name": {
-                    "en": "USD Conversion",
-                    "de": "USD Umrechnung",
-                    "ru": "Конвертация в доллары США",
-                    "pt": "Conversão em USD",
-                    "nl": "USD-conversie",
-                    "fr": "Conversion en USD",
-                    "it": "Conversione in USD",
-                    "es": "Conversión USD",
-                    "pl": "Konwersja USD",
-                    "uk": "Конвертація USD",
-                    "zh-cn": "USD Conversion"
-                },
-                "type": "number",
-                "role": "value",
-                "read": true,
-                "write": false,
-                "desc": "Bitcoin to USD conversion rate"
-            }
-        },
-        {
-            "_id": "conversion.eur",
-            "type": "state",
-            "common": {
-                "name": {
-                    "en": "EUR Conversion",
-                    "de": "EUR Umrechnung",
-                    "ru": "Конвертация в евро",
-                    "pt": "Conversão em EUR",
-                    "nl": "Omzetting EUR",
-                    "fr": "Conversion en EUR",
-                    "it": "Conversione in euro",
-                    "es": "Conversión EUR",
-                    "pl": "Konwersja EUR",
-                    "uk": "Конвертація євро",
-                    "zh-cn": "EUR Conversion"
-                },
-                "type": "number",
-                "role": "value",
-                "read": true,
-                "write": false,
-                "desc": "Bitcoin to EUR conversion rate"
-            }
-        },
-        {
-            "_id": "conversion.timestamp",
-            "type": "state",
-            "common": {
-                "name": {
-                    "en": "Conversion Timestamp",
-                    "de": "Zeitstempel der Umrechnung",
-                    "ru": "Временная метка преобразования",
-                    "pt": "Carimbo de data/hora da conversão",
-                    "nl": "Tijdstempel conversie",
-                    "fr": "Horodatage de la conversion",
-                    "it": "Timestamp di conversione",
-                    "es": "Hora de conversión",
-                    "pl": "Znacznik czasu konwersji",
-                    "uk": "Мітка часу перетворення",
-                    "zh-cn": "Conversion Timestamp"
-                },
-                "type": "number",
-                "role": "value.time",
-                "read": true,
-                "write": false,
-                "desc": "Timestamp of the currency conversion"
-            }
-        },
-        {
-            "_id": "conversion.moscowtimeUSD",
-            "type": "state",
-            "common": {
-                "name": {
-                    "en": "Moscow-Time USD",
-                    "de": "Moskau-Zeit USD",
-                    "ru": "Московское время USD",
-                    "pt": "Hora de Moscovo USD",
-                    "nl": "Moskou-Tijd USD",
-                    "fr": "Heure de Moscou USD",
-                    "it": "Ora di Mosca USD",
-                    "es": "Moscú-Time USD",
-                    "pl": "Czas moskiewski USD",
-                    "uk": "Долар США за московським часом",
-                    "zh-cn": "Moscow-Time USD"
-                },
-                "type": "string",
-                "role": "text",
-                "read": true,
-                "write": false,
-                "desc": "Number of Satoshis per 1 USD in Moscow Time format"
-            }
-        },
-        {
-            "_id": "conversion.moscowtimeEUR",
-            "type": "state",
-            "common": {
-                "name": {
-                    "en": "Moscow-Time EUR",
-                    "de": "Moskau-Zeit EUR",
-                    "ru": "Московское время EUR",
-                    "pt": "Hora de Moscovo EUR",
-                    "nl": "Moskou-Tijd EUR",
-                    "fr": "Heure de Moscou EUR",
-                    "it": "Tempo di Mosca EUR",
-                    "es": "Moscú-Hora EUR",
-                    "pl": "Czas moskiewski EUR",
-                    "uk": "Московський час EUR",
-                    "zh-cn": "Moscow-Time EUR"
-                },
-                "type": "string",
-                "role": "text",
-                "read": true,
-                "write": false,
-                "desc": {
-                    "en": "Number of Satoshis per 1 EUR in Moscow Time format",
-                    "de": "Anzahl der Satoshis pro 1 EUR im Format Moskauer Zeit",
-                    "ru": "Количество сатоши в 1 евро в формате московского времени",
-                    "pt": "Número de Satoshis por 1 EUR no formato da hora de Moscovo",
-                    "nl": "Aantal Satoshi's per 1 EUR in Moskou-tijd formaat",
-                    "fr": "Nombre de satoshis pour 1 EUR au format de l'heure de Moscou",
-                    "it": "Numero di Satoshi per 1 EUR nel formato dell'ora di Mosca",
-                    "es": "Número de Satoshis por 1 EUR en formato de hora de Moscú",
-                    "pl": "Liczba satoshi za 1 EUR w formacie czasu moskiewskiego",
-                    "uk": "Кількість сатоші за 1 EUR в форматі Московського часу",
-                    "zh-cn": "Number of Satoshis per 1 EUR in Moscow Time format"
-                }
-            }
-        },
-        {
-            "_id": "fees",
-            "type": "channel",
-            "common": {
-                "name": "Transaction Fees"
-            },
-            "native": {}
-        },
-        {
-            "_id": "fees.fastest",
-            "type": "state",
-            "common": {
-                "name": {
-                    "en": "Fastest Fee",
-                    "de": "Schnellste Gebühr",
-                    "ru": "Самый быстрый сбор",
-                    "pt": "Taxa mais rápida",
-                    "nl": "Snelste vergoeding",
-                    "fr": "Taxe la plus rapide",
-                    "it": "Tariffa più veloce",
-                    "es": "Tasa más rápida",
-                    "pl": "Najszybsza opłata",
-                    "uk": "Найшвидша комісія",
-                    "zh-cn": "Fastest Fee"
-                },
-                "type": "number",
-                "role": "value",
-                "read": true,
-                "write": false,
-                "desc": "Fastest transaction fee"
-            }
-        },
-        {
-            "_id": "fees.halfHour",
-            "type": "state",
-            "common": {
-                "name": {
-                    "en": "Half Hour Fee",
-                    "de": "Gebühr für eine halbe Stunde",
-                    "ru": "Плата за полчаса",
-                    "pt": "Taxa de meia hora",
-                    "nl": "Prijs half uur",
-                    "fr": "Frais pour une demi-heure",
-                    "it": "Tariffa di mezz'ora",
-                    "es": "Media hora",
-                    "pl": "Opłata za pół godziny",
-                    "uk": "Півгодинний тариф",
-                    "zh-cn": "Half Hour Fee"
-                },
-                "type": "number",
-                "role": "value",
-                "read": true,
-                "write": false,
-                "desc": "Fee for confirmation within half an hour"
-            }
-        },
-        {
-            "_id": "fees.hour",
-            "type": "state",
-            "common": {
-                "name": {
-                    "en": "one Hour Fee",
-                    "de": "Gebühr für eine Stunde",
-                    "ru": "Плата за один час",
-                    "pt": "Taxa de uma hora",
-                    "nl": "één uur kosten",
-                    "fr": "Frais pour une heure",
-                    "it": "Tariffa di un'ora",
-                    "es": "Tasa de una hora",
-                    "pl": "Opłata za jedną godzinę",
-                    "uk": "Годинна плата",
-                    "zh-cn": "one Hour Fee"
-                },
-                "type": "number",
-                "role": "value",
-                "read": true,
-                "write": false,
-                "desc": "Fee for confirmation within an hour"
-            }
-        },
-        {
-            "_id": "fees.economy",
-            "type": "state",
-            "common": {
-                "name": {
-                    "en": "Economy Fee",
-                    "de": "Economy-Gebühr",
-                    "ru": "Плата за экономию",
-                    "pt": "Tarifa económica",
-                    "nl": "Economy vergoeding",
-                    "fr": "Tarif économique",
-                    "it": "Tariffa Economy",
-                    "es": "Tasa económica",
-                    "pl": "Opłata ekonomiczna",
-                    "uk": "Економ-тариф",
-                    "zh-cn": "Economy Fee"
-                },
-                "type": "number",
-                "role": "value",
-                "read": true,
-                "write": false,
-                "desc": "Economy transaction fee"
-            }
-        },
-        {
-            "_id": "fees.minimum",
-            "type": "state",
-            "common": {
-                "name": {
-                    "en": "Minimum Fee",
-                    "de": "Mindestgebühr",
-                    "ru": "Минимальная плата",
-                    "pt": "Taxa mínima",
-                    "nl": "Minimum vergoeding",
-                    "fr": "Redevance minimale",
-                    "it": "Tariffa minima",
-                    "es": "Tasa mínima",
-                    "pl": "Opłata minimalna",
-                    "uk": "Мінімальний внесок",
-                    "zh-cn": "Minimum Fee"
-                },
-                "type": "number",
-                "role": "value",
-                "read": true,
-                "write": false,
-                "desc": "Minimum transaction fee"
-            }
-        },
-        {
-            "_id": "block",
-            "type": "channel",
-            "common": {
-                "name": {
-                    "en": "Block Information",
-                    "de": "Block Informationen",
-                    "ru": "Информация о блоке",
-                    "pt": "Informações sobre o bloco",
-                    "nl": "Blok Informatie",
-                    "fr": "Informations sur les blocs",
-                    "it": "Informazioni sul blocco",
-                    "es": "Información en bloque",
-                    "pl": "Informacje o bloku",
-                    "uk": "Інформація про блок",
-                    "zh-cn": "Block Information"
-                }
-            },
-            "native": {}
-        },
-        {
-            "_id": "block.height",
-            "type": "state",
-            "common": {
-                "name": {
-                    "en": "Block Height",
-                    "de": "Blockhöhe",
-                    "ru": "Высота блока",
-                    "pt": "Altura do bloco",
-                    "nl": "Hoogte blok",
-                    "fr": "Hauteur du bloc",
-                    "it": "Altezza del blocco",
-                    "es": "Altura del bloque",
-                    "pl": "Wysokość bloku",
-                    "uk": "Висота блоку",
-                    "zh-cn": "Block Height"
-                },
-                "type": "number",
-                "role": "value",
-                "read": true,
-                "write": false,
-                "desc": "Height of the latest block"
-            }
-        },
-        {
-            "_id": "block.hash",
-            "type": "state",
-            "common": {
-                "name": {
-                    "en": "Block Hash",
-                    "de": "Block Hash",
-                    "ru": "Блочный хэш",
-                    "pt": "Bloco Hash",
-                    "nl": "Blok Hash",
-                    "fr": "Bloc Hash",
-                    "it": "Blocco Hash",
-                    "es": "Bloque Hash",
-                    "pl": "Block Hash",
-                    "uk": "Block Hash",
-                    "zh-cn": "Block Hash"
-                },
-                "type": "string",
-                "role": "text",
-                "read": true,
-                "write": false,
-                "desc": "Hash of the latest block"
-            }
-        },
-        {
-            "_id": "block.timestamp",
-            "type": "state",
-            "common": {
-                "name": {
-                    "en": "Block Timestamp",
-                    "de": "Block Zeitstempel",
-                    "ru": "Временная метка блока",
-                    "pt": "Carimbo de data/hora do bloco",
-                    "nl": "Tijdstempel blok",
-                    "fr": "Horodatage du bloc",
-                    "it": "Timestamp del blocco",
-                    "es": "Marca de tiempo del bloque",
-                    "pl": "Znacznik czasu bloku",
-                    "uk": "Мітка часу блоку",
-                    "zh-cn": "Block Timestamp"
-                },
-                "type": "number",
-                "role": "value.time",
-                "read": true,
-                "write": false,
-                "desc": "Timestamp of the latest block"
-            }
-        },
-        {
-            "_id": "block.timeSinceLastBlock",
-            "type": "state",
-            "common": {
-                "name": {
-                    "en": "Time Since Last Block",
-                    "de": "Zeit seit dem letzten Block",
-                    "ru": "Время с момента последнего блока",
-                    "pt": "Tempo desde o último bloqueio",
-                    "nl": "Tijd sinds laatste blok",
-                    "fr": "Temps écoulé depuis le dernier bloc",
-                    "it": "Tempo trascorso dall'ultimo blocco",
-                    "es": "Tiempo transcurrido desde el último bloqueo",
-                    "pl": "Czas od ostatniego bloku",
-                    "uk": "Час від останнього блоку",
-                    "zh-cn": "Time Since Last Block"
-                },
-                "type": "string",
-                "role": "text",
-                "read": true,
-                "write": false,
-                "desc": "Time elapsed since the last block"
-            }
-        },
-        {
-            "_id": "block.miningPool",
-            "type": "state",
-            "common": {
-                "name": {
-                    "en": "Mining Pool",
-                    "de": "Mining-Pool",
-                    "ru": "Пул для добычи полезных ископаемых",
-                    "pt": "Pool mineiro",
-                    "nl": "Mijnbouw Pool",
-                    "fr": "Pool minier",
-                    "it": "Pool minerario",
-                    "es": "Pool minero",
-                    "pl": "Pula wydobywcza",
-                    "uk": "Майнінг-басейн",
-                    "zh-cn": "Mining Pool"
-                },
-                "type": "string",
-                "role": "text",
-                "read": true,
-                "write": false,
-                "desc": "Name of the pool that mined the last block"
-            }
-        },
-
-        {
-            "_id": "network",
-            "type": "channel",
-            "common": {
-                "name": {
-                    "en": "Network Information",
-                    "de": "Netzwerk-Informationen",
-                    "ru": "Информация о сети",
-                    "pt": "Informações sobre a rede",
-                    "nl": "Netwerkinformatie",
-                    "fr": "Informations sur le réseau",
-                    "it": "Informazioni sulla rete",
-                    "es": "Información de la red",
-                    "pl": "Informacje o sieci",
-                    "uk": "Інформація про мережу",
-                    "zh-cn": "Network Information"
-                }
-            },
-            "native": {}
-        },
-        {
-            "_id": "network.averageBlockTime",
-            "type": "state",
-            "common": {
-                "name": {
-                    "en": "Average Block Time",
-                    "de": "Durchschnittliche Blockzeit",
-                    "ru": "Среднее время блока",
-                    "pt": "Tempo médio de bloqueio",
-                    "nl": "Gemiddelde bloktijd",
-                    "fr": "Temps de blocage moyen",
-                    "it": "Tempo medio del blocco",
-                    "es": "Tiempo medio por bloque",
-                    "pl": "Średni czas bloku",
-                    "uk": "Середній час блокування",
-                    "zh-cn": "Average Block Time"
-                },
-                "type": "number",
-                "role": "value",
-                "unit": "min",
-                "read": true,
-                "write": false,
-                "desc": "Average time between blocks in minutes"
-            }
-        },
-        {
-            "_id": "network.difficultyChange",
-            "type": "state",
-            "common": {
-                "name": {
-                    "en": "Difficulty Change",
-                    "de": "Schwierigkeitsanpassung",
-                    "ru": "Трудность Изменение",
-                    "pt": "Dificuldade Mudança",
-                    "nl": "Moeilijkheidsgraad Verandering",
-                    "fr": "Difficulté Changement",
-                    "it": "Difficoltà Cambiamento",
-                    "es": "Cambio de dificultad",
-                    "pl": "Zmiana trudności",
-                    "uk": "Зміна складності",
-                    "zh-cn": "Difficulty Change"
-                },
-                "type": "number",
-                "role": "value",
-                "unit": "%",
-                "read": true,
-                "write": false,
-                "desc": "Current difficulty adjustment in percent"
-            }
-        },
-        {
-            "_id": "network.previousDifficultyChange",
-            "type": "state",
-            "common": {
-                "name": {
-                    "en": "Previous Difficulty Change",
-                    "de": "Vorheriger Schwierigkeitsanpassung",
-                    "ru": "Предыдущее изменение сложности",
-                    "pt": "Alteração da dificuldade anterior",
-                    "nl": "Vorige Moeilijkheidsgraad Verandering",
-                    "fr": "Changement de difficulté précédent",
-                    "it": "Precedente Modifica della difficoltà",
-                    "es": "Cambio de dificultad anterior",
-                    "pl": "Poprzednia zmiana poziomu trudności",
-                    "uk": "Попередня зміна складності",
-                    "zh-cn": "Previous Difficulty Change"
-                },
-                "type": "number",
-                "role": "value",
-                "unit": "%",
-                "read": true,
-                "write": false,
-                "desc": "Previous difficulty adjustment in percent"
-            }
-        },
-        {
-            "_id": "network.nextDifficultyAdjustment",
-            "type": "state",
-            "common": {
-                "name": {
-                    "en": "Next Difficulty Adjustment",
-                    "de": "Nächste Schwierigkeitsanpassung",
-                    "ru": "Следующая регулировка сложности",
-                    "pt": "Próximo Ajuste de dificuldade",
-                    "nl": "Volgende moeilijkheidsaanpassing",
-                    "fr": "Prochain ajustement de la difficulté",
-                    "it": "Prossima regolazione della difficoltà",
-                    "es": "Siguiente ajuste de dificultad",
-                    "pl": "Następne dostosowanie trudności",
-                    "uk": "Наступний рівень складності",
-                    "zh-cn": "Next Difficulty Adjustment"
-                },
-                "type": "number",
-                "role": "value.time",
-                "read": true,
-                "write": false,
-                "desc": "Estimated timestamp of the next difficulty adjustment"
-            }
-        },
-        {
-            "_id": "network.remainingTimeToDifficulty",
-            "type": "state",
-            "common": {
-                "name": {
-                    "en": "Remaining Time to Difficulty Adjustment",
-                    "de": "Verbleibende Zeit bis zur Schwierigkeitsanpassung",
-                    "ru": "Оставшееся время до корректировки сложности",
-                    "pt": "Tempo restante para o ajuste de dificuldade",
-                    "nl": "Resterende tijd tot moeilijkheidsaanpassing",
-                    "fr": "Temps restant jusqu'à l'ajustement de la difficulté",
-                    "it": "Tempo rimanente alla regolazione della difficoltà",
-                    "es": "Tiempo restante hasta el ajuste de la dificultad",
-                    "pl": "Pozostały czas na dostosowanie trudności",
-                    "uk": "Час, що залишився до адаптації до складності",
-                    "zh-cn": "Remaining Time to Difficulty Adjustment"
-                },
-                "type": "string",
-                "role": "text",
-                "read": true,
-                "write": false,
-                "desc": "Remaining time until the next difficulty adjustment"
-            }
-        },
-        {
-            "_id": "network.remainingTimeToHalving",
-            "type": "state",
-            "common": {
-                "name": {
-                    "en": "Remaining Time to Halving",
-                    "de": "Verbleibende Zeit bis zum Halving",
-                    "ru": "Оставшееся время до сокращения вдвое",
-                    "pt": "Tempo restante para reduzir para metade",
-                    "nl": "Resterende tijd tot halvering",
-                    "fr": "Temps restant jusqu'à la division en deux",
-                    "it": "Tempo rimanente al dimezzamento",
-                    "es": "Tiempo restante hasta la reducción a la mitad",
-                    "pl": "Pozostały czas do zmniejszenia o połowę",
-                    "uk": "Час, що залишився до скорочення вдвічі",
-                    "zh-cn": "Remaining Time to Halving"
-                },
-                "type": "string",
-                "role": "text",
-                "read": true,
-                "write": false,
-                "desc": "Remaining time until the next halving"
-            }
-        },
-        {
-            "_id": "mempool",
-            "type": "channel",
-            "common": {
-                "name": {
-                    "en": "Mempool Information",
-                    "de": "Mempool-Informationen",
-                    "ru": "Информация о мемпуле",
-                    "pt": "Informações sobre o Mempool",
-                    "nl": "Mempool Informatie",
-                    "fr": "Informations sur Mempool",
-                    "it": "Informazioni su Mempool",
-                    "es": "Información sobre Mempool",
-                    "pl": "Informacje o Mempool",
-                    "uk": "Інформація про пул пам'яті",
-                    "zh-cn": "Mempool Information"
-                }
-            },
-            "native": {}
-        },
-        {
-            "_id": "mempool.transactionCount",
-            "type": "state",
-            "common": {
-                "name": {
-                    "en": "Unconfirmed Transactions",
-                    "de": "Unbestätigte Transaktionen",
-                    "ru": "Неподтвержденные сделки",
-                    "pt": "Transacções não confirmadas",
-                    "nl": "Niet-bevestigde transacties",
-                    "fr": "Transactions non confirmées",
-                    "it": "Transazioni non confermate",
-                    "es": "Transacciones no confirmadas",
-                    "pl": "Niepotwierdzone transakcje",
-                    "uk": "Непідтверджені транзакції",
-                    "zh-cn": "Unconfirmed Transactions"
-                },
-                "type": "number",
-                "role": "value",
-                "read": true,
-                "write": false,
-                "desc": "Number of unconfirmed transactions in the mempool"
-            }
-        }
+    "desc": {
+      "en": "Mempool.space websocket",
+      "de": "Mempool.space websocket",
+      "ru": "Mempool.space websocket",
+      "pt": "Mempool.space websocket",
+      "nl": "Mempool.space websocket",
+      "fr": "Mempool.space websocket",
+      "it": "Mempool.space websocket",
+      "es": "Mempool.space websocket",
+      "pl": "Mempool.space websocket",
+      "uk": "Mempool.space websocket",
+      "zh-cn": "Mempool.space websocket"
+    },
+    "authors": [
+      "Hans-Wurst-21 <github+mempool-space@hansmail.net>"
+    ],
+    "keywords": [
+      "Bitcoin",
+      "Mempool.space",
+      "mempool",
+      "fixthemoneyfixtheworld"
+    ],
+    "licenseInformation": {
+      "type": "free",
+      "license": "MIT"
+    },
+    "platform": "Javascript/Node.js",
+    "icon": "mempool-space.png",
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/Hans-Wurst-21/ioBroker.mempool-space/main/admin/mempool-space.png",
+    "readme": "https://github.com/Hans-Wurst-21/ioBroker.mempool-space/blob/main/README.md",
+    "loglevel": "info",
+    "tier": 3,
+    "mode": "daemon",
+    "type": "infrastructure",
+    "compact": true,
+    "connectionType": "cloud",
+    "dataSource": "push",
+    "adminUI": {
+      "config": "json"
+    },
+    "dependencies": [
+      {
+        "js-controller": ">=6.0.11"
+      }
+    ],
+    "globalDependencies": [
+      {
+        "admin": ">=7.2.6"
+      }
     ]
+  },
+  "native": {
+    "websocketUrl": "wss://mempool.space/api/v1/ws"
+  },
+  "objects": [],
+  "instanceObjects": [
+    {
+      "_id": "info",
+      "type": "channel",
+      "common": {
+        "name": "Information"
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.connection",
+      "type": "state",
+      "common": {
+        "role": "indicator.connected",
+        "name": "Device or service connected",
+        "type": "boolean",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "conversion",
+      "type": "channel",
+      "common": {
+        "name": "Currency Conversion"
+      },
+      "native": {}
+    },
+    {
+      "_id": "conversion.usd",
+      "type": "state",
+      "common": {
+        "name": {
+          "en": "USD Conversion",
+          "de": "USD Umrechnung",
+          "ru": "Конвертация в доллары США",
+          "pt": "Conversão em USD",
+          "nl": "USD-conversie",
+          "fr": "Conversion en USD",
+          "it": "Conversione in USD",
+          "es": "Conversión USD",
+          "pl": "Konwersja USD",
+          "uk": "Конвертація USD",
+          "zh-cn": "USD Conversion"
+        },
+        "type": "number",
+        "role": "value",
+        "read": true,
+        "write": false,
+        "desc": "Bitcoin to USD conversion rate"
+      }
+    },
+    {
+      "_id": "conversion.eur",
+      "type": "state",
+      "common": {
+        "name": {
+          "en": "EUR Conversion",
+          "de": "EUR Umrechnung",
+          "ru": "Конвертация в евро",
+          "pt": "Conversão em EUR",
+          "nl": "Omzetting EUR",
+          "fr": "Conversion en EUR",
+          "it": "Conversione in euro",
+          "es": "Conversión EUR",
+          "pl": "Konwersja EUR",
+          "uk": "Конвертація євро",
+          "zh-cn": "EUR Conversion"
+        },
+        "type": "number",
+        "role": "value",
+        "read": true,
+        "write": false,
+        "desc": "Bitcoin to EUR conversion rate"
+      }
+    },
+    {
+      "_id": "conversion.timestamp",
+      "type": "state",
+      "common": {
+        "name": {
+          "en": "Conversion Timestamp",
+          "de": "Zeitstempel der Umrechnung",
+          "ru": "Временная метка преобразования",
+          "pt": "Carimbo de data/hora da conversão",
+          "nl": "Tijdstempel conversie",
+          "fr": "Horodatage de la conversion",
+          "it": "Timestamp di conversione",
+          "es": "Hora de conversión",
+          "pl": "Znacznik czasu konwersji",
+          "uk": "Мітка часу перетворення",
+          "zh-cn": "Conversion Timestamp"
+        },
+        "type": "number",
+        "role": "value.time",
+        "read": true,
+        "write": false,
+        "desc": "Timestamp of the currency conversion"
+      }
+    },
+    {
+      "_id": "conversion.moscowtimeUSD",
+      "type": "state",
+      "common": {
+        "name": {
+          "en": "Moscow-Time USD",
+          "de": "Moskau-Zeit USD",
+          "ru": "Московское время USD",
+          "pt": "Hora de Moscovo USD",
+          "nl": "Moskou-Tijd USD",
+          "fr": "Heure de Moscou USD",
+          "it": "Ora di Mosca USD",
+          "es": "Moscú-Time USD",
+          "pl": "Czas moskiewski USD",
+          "uk": "Долар США за московським часом",
+          "zh-cn": "Moscow-Time USD"
+        },
+        "type": "string",
+        "role": "text",
+        "read": true,
+        "write": false,
+        "desc": "Number of Satoshis per 1 USD in Moscow Time format"
+      }
+    },
+    {
+      "_id": "conversion.moscowtimeEUR",
+      "type": "state",
+      "common": {
+        "name": {
+          "en": "Moscow-Time EUR",
+          "de": "Moskau-Zeit EUR",
+          "ru": "Московское время EUR",
+          "pt": "Hora de Moscovo EUR",
+          "nl": "Moskou-Tijd EUR",
+          "fr": "Heure de Moscou EUR",
+          "it": "Tempo di Mosca EUR",
+          "es": "Moscú-Hora EUR",
+          "pl": "Czas moskiewski EUR",
+          "uk": "Московський час EUR",
+          "zh-cn": "Moscow-Time EUR"
+        },
+        "type": "string",
+        "role": "text",
+        "read": true,
+        "write": false,
+        "desc": {
+          "en": "Number of Satoshis per 1 EUR in Moscow Time format",
+          "de": "Anzahl der Satoshis pro 1 EUR im Format Moskauer Zeit",
+          "ru": "Количество сатоши в 1 евро в формате московского времени",
+          "pt": "Número de Satoshis por 1 EUR no formato da hora de Moscovo",
+          "nl": "Aantal Satoshi's per 1 EUR in Moskou-tijd formaat",
+          "fr": "Nombre de satoshis pour 1 EUR au format de l'heure de Moscou",
+          "it": "Numero di Satoshi per 1 EUR nel formato dell'ora di Mosca",
+          "es": "Número de Satoshis por 1 EUR en formato de hora de Moscú",
+          "pl": "Liczba satoshi za 1 EUR w formacie czasu moskiewskiego",
+          "uk": "Кількість сатоші за 1 EUR в форматі Московського часу",
+          "zh-cn": "Number of Satoshis per 1 EUR in Moscow Time format"
+        }
+      }
+    },
+    {
+      "_id": "fees",
+      "type": "channel",
+      "common": {
+        "name": "Transaction Fees"
+      },
+      "native": {}
+    },
+    {
+      "_id": "fees.fastest",
+      "type": "state",
+      "common": {
+        "name": {
+          "en": "Fastest Fee",
+          "de": "Schnellste Gebühr",
+          "ru": "Самый быстрый сбор",
+          "pt": "Taxa mais rápida",
+          "nl": "Snelste vergoeding",
+          "fr": "Taxe la plus rapide",
+          "it": "Tariffa più veloce",
+          "es": "Tasa más rápida",
+          "pl": "Najszybsza opłata",
+          "uk": "Найшвидша комісія",
+          "zh-cn": "Fastest Fee"
+        },
+        "type": "number",
+        "role": "value",
+        "read": true,
+        "write": false,
+        "desc": "Fastest transaction fee"
+      }
+    },
+    {
+      "_id": "fees.halfHour",
+      "type": "state",
+      "common": {
+        "name": {
+          "en": "Half Hour Fee",
+          "de": "Gebühr für eine halbe Stunde",
+          "ru": "Плата за полчаса",
+          "pt": "Taxa de meia hora",
+          "nl": "Prijs half uur",
+          "fr": "Frais pour une demi-heure",
+          "it": "Tariffa di mezz'ora",
+          "es": "Media hora",
+          "pl": "Opłata za pół godziny",
+          "uk": "Півгодинний тариф",
+          "zh-cn": "Half Hour Fee"
+        },
+        "type": "number",
+        "role": "value",
+        "read": true,
+        "write": false,
+        "desc": "Fee for confirmation within half an hour"
+      }
+    },
+    {
+      "_id": "fees.hour",
+      "type": "state",
+      "common": {
+        "name": {
+          "en": "one Hour Fee",
+          "de": "Gebühr für eine Stunde",
+          "ru": "Плата за один час",
+          "pt": "Taxa de uma hora",
+          "nl": "één uur kosten",
+          "fr": "Frais pour une heure",
+          "it": "Tariffa di un'ora",
+          "es": "Tasa de una hora",
+          "pl": "Opłata za jedną godzinę",
+          "uk": "Годинна плата",
+          "zh-cn": "one Hour Fee"
+        },
+        "type": "number",
+        "role": "value",
+        "read": true,
+        "write": false,
+        "desc": "Fee for confirmation within an hour"
+      }
+    },
+    {
+      "_id": "fees.economy",
+      "type": "state",
+      "common": {
+        "name": {
+          "en": "Economy Fee",
+          "de": "Economy-Gebühr",
+          "ru": "Плата за экономию",
+          "pt": "Tarifa económica",
+          "nl": "Economy vergoeding",
+          "fr": "Tarif économique",
+          "it": "Tariffa Economy",
+          "es": "Tasa económica",
+          "pl": "Opłata ekonomiczna",
+          "uk": "Економ-тариф",
+          "zh-cn": "Economy Fee"
+        },
+        "type": "number",
+        "role": "value",
+        "read": true,
+        "write": false,
+        "desc": "Economy transaction fee"
+      }
+    },
+    {
+      "_id": "fees.minimum",
+      "type": "state",
+      "common": {
+        "name": {
+          "en": "Minimum Fee",
+          "de": "Mindestgebühr",
+          "ru": "Минимальная плата",
+          "pt": "Taxa mínima",
+          "nl": "Minimum vergoeding",
+          "fr": "Redevance minimale",
+          "it": "Tariffa minima",
+          "es": "Tasa mínima",
+          "pl": "Opłata minimalna",
+          "uk": "Мінімальний внесок",
+          "zh-cn": "Minimum Fee"
+        },
+        "type": "number",
+        "role": "value",
+        "read": true,
+        "write": false,
+        "desc": "Minimum transaction fee"
+      }
+    },
+    {
+      "_id": "block",
+      "type": "channel",
+      "common": {
+        "name": {
+          "en": "Block Information",
+          "de": "Block Informationen",
+          "ru": "Информация о блоке",
+          "pt": "Informações sobre o bloco",
+          "nl": "Blok Informatie",
+          "fr": "Informations sur les blocs",
+          "it": "Informazioni sul blocco",
+          "es": "Información en bloque",
+          "pl": "Informacje o bloku",
+          "uk": "Інформація про блок",
+          "zh-cn": "Block Information"
+        }
+      },
+      "native": {}
+    },
+    {
+      "_id": "block.height",
+      "type": "state",
+      "common": {
+        "name": {
+          "en": "Block Height",
+          "de": "Blockhöhe",
+          "ru": "Высота блока",
+          "pt": "Altura do bloco",
+          "nl": "Hoogte blok",
+          "fr": "Hauteur du bloc",
+          "it": "Altezza del blocco",
+          "es": "Altura del bloque",
+          "pl": "Wysokość bloku",
+          "uk": "Висота блоку",
+          "zh-cn": "Block Height"
+        },
+        "type": "number",
+        "role": "value",
+        "read": true,
+        "write": false,
+        "desc": "Height of the latest block"
+      }
+    },
+    {
+      "_id": "block.hash",
+      "type": "state",
+      "common": {
+        "name": {
+          "en": "Block Hash",
+          "de": "Block Hash",
+          "ru": "Блочный хэш",
+          "pt": "Bloco Hash",
+          "nl": "Blok Hash",
+          "fr": "Bloc Hash",
+          "it": "Blocco Hash",
+          "es": "Bloque Hash",
+          "pl": "Block Hash",
+          "uk": "Block Hash",
+          "zh-cn": "Block Hash"
+        },
+        "type": "string",
+        "role": "text",
+        "read": true,
+        "write": false,
+        "desc": "Hash of the latest block"
+      }
+    },
+    {
+      "_id": "block.timestamp",
+      "type": "state",
+      "common": {
+        "name": {
+          "en": "Block Timestamp",
+          "de": "Block Zeitstempel",
+          "ru": "Временная метка блока",
+          "pt": "Carimbo de data/hora do bloco",
+          "nl": "Tijdstempel blok",
+          "fr": "Horodatage du bloc",
+          "it": "Timestamp del blocco",
+          "es": "Marca de tiempo del bloque",
+          "pl": "Znacznik czasu bloku",
+          "uk": "Мітка часу блоку",
+          "zh-cn": "Block Timestamp"
+        },
+        "type": "number",
+        "role": "value.time",
+        "read": true,
+        "write": false,
+        "desc": "Timestamp of the latest block"
+      }
+    },
+    {
+      "_id": "block.timeSinceLastBlock",
+      "type": "state",
+      "common": {
+        "name": {
+          "en": "Time Since Last Block",
+          "de": "Zeit seit dem letzten Block",
+          "ru": "Время с момента последнего блока",
+          "pt": "Tempo desde o último bloqueio",
+          "nl": "Tijd sinds laatste blok",
+          "fr": "Temps écoulé depuis le dernier bloc",
+          "it": "Tempo trascorso dall'ultimo blocco",
+          "es": "Tiempo transcurrido desde el último bloqueo",
+          "pl": "Czas od ostatniego bloku",
+          "uk": "Час від останнього блоку",
+          "zh-cn": "Time Since Last Block"
+        },
+        "type": "string",
+        "role": "text",
+        "read": true,
+        "write": false,
+        "desc": "Time elapsed since the last block"
+      }
+    },
+    {
+      "_id": "block.miningPool",
+      "type": "state",
+      "common": {
+        "name": {
+          "en": "Mining Pool",
+          "de": "Mining-Pool",
+          "ru": "Пул для добычи полезных ископаемых",
+          "pt": "Pool mineiro",
+          "nl": "Mijnbouw Pool",
+          "fr": "Pool minier",
+          "it": "Pool minerario",
+          "es": "Pool minero",
+          "pl": "Pula wydobywcza",
+          "uk": "Майнінг-басейн",
+          "zh-cn": "Mining Pool"
+        },
+        "type": "string",
+        "role": "text",
+        "read": true,
+        "write": false,
+        "desc": "Name of the pool that mined the last block"
+      }
+    },
+    {
+      "_id": "network",
+      "type": "channel",
+      "common": {
+        "name": {
+          "en": "Network Information",
+          "de": "Netzwerk-Informationen",
+          "ru": "Информация о сети",
+          "pt": "Informações sobre a rede",
+          "nl": "Netwerkinformatie",
+          "fr": "Informations sur le réseau",
+          "it": "Informazioni sulla rete",
+          "es": "Información de la red",
+          "pl": "Informacje o sieci",
+          "uk": "Інформація про мережу",
+          "zh-cn": "Network Information"
+        }
+      },
+      "native": {}
+    },
+    {
+      "_id": "network.averageBlockTime",
+      "type": "state",
+      "common": {
+        "name": {
+          "en": "Average Block Time",
+          "de": "Durchschnittliche Blockzeit",
+          "ru": "Среднее время блока",
+          "pt": "Tempo médio de bloqueio",
+          "nl": "Gemiddelde bloktijd",
+          "fr": "Temps de blocage moyen",
+          "it": "Tempo medio del blocco",
+          "es": "Tiempo medio por bloque",
+          "pl": "Średni czas bloku",
+          "uk": "Середній час блокування",
+          "zh-cn": "Average Block Time"
+        },
+        "type": "number",
+        "role": "value",
+        "unit": "min",
+        "read": true,
+        "write": false,
+        "desc": "Average time between blocks in minutes"
+      }
+    },
+    {
+      "_id": "network.difficultyChange",
+      "type": "state",
+      "common": {
+        "name": {
+          "en": "Difficulty Change",
+          "de": "Schwierigkeitsanpassung",
+          "ru": "Трудность Изменение",
+          "pt": "Dificuldade Mudança",
+          "nl": "Moeilijkheidsgraad Verandering",
+          "fr": "Difficulté Changement",
+          "it": "Difficoltà Cambiamento",
+          "es": "Cambio de dificultad",
+          "pl": "Zmiana trudności",
+          "uk": "Зміна складності",
+          "zh-cn": "Difficulty Change"
+        },
+        "type": "number",
+        "role": "value",
+        "unit": "%",
+        "read": true,
+        "write": false,
+        "desc": "Current difficulty adjustment in percent"
+      }
+    },
+    {
+      "_id": "network.previousDifficultyChange",
+      "type": "state",
+      "common": {
+        "name": {
+          "en": "Previous Difficulty Change",
+          "de": "Vorheriger Schwierigkeitsanpassung",
+          "ru": "Предыдущее изменение сложности",
+          "pt": "Alteração da dificuldade anterior",
+          "nl": "Vorige Moeilijkheidsgraad Verandering",
+          "fr": "Changement de difficulté précédent",
+          "it": "Precedente Modifica della difficoltà",
+          "es": "Cambio de dificultad anterior",
+          "pl": "Poprzednia zmiana poziomu trudności",
+          "uk": "Попередня зміна складності",
+          "zh-cn": "Previous Difficulty Change"
+        },
+        "type": "number",
+        "role": "value",
+        "unit": "%",
+        "read": true,
+        "write": false,
+        "desc": "Previous difficulty adjustment in percent"
+      }
+    },
+    {
+      "_id": "network.nextDifficultyAdjustment",
+      "type": "state",
+      "common": {
+        "name": {
+          "en": "Next Difficulty Adjustment",
+          "de": "Nächste Schwierigkeitsanpassung",
+          "ru": "Следующая регулировка сложности",
+          "pt": "Próximo Ajuste de dificuldade",
+          "nl": "Volgende moeilijkheidsaanpassing",
+          "fr": "Prochain ajustement de la difficulté",
+          "it": "Prossima regolazione della difficoltà",
+          "es": "Siguiente ajuste de dificultad",
+          "pl": "Następne dostosowanie trudności",
+          "uk": "Наступний рівень складності",
+          "zh-cn": "Next Difficulty Adjustment"
+        },
+        "type": "number",
+        "role": "value.time",
+        "read": true,
+        "write": false,
+        "desc": "Estimated timestamp of the next difficulty adjustment"
+      }
+    },
+    {
+      "_id": "network.remainingTimeToDifficulty",
+      "type": "state",
+      "common": {
+        "name": {
+          "en": "Remaining Time to Difficulty Adjustment",
+          "de": "Verbleibende Zeit bis zur Schwierigkeitsanpassung",
+          "ru": "Оставшееся время до корректировки сложности",
+          "pt": "Tempo restante para o ajuste de dificuldade",
+          "nl": "Resterende tijd tot moeilijkheidsaanpassing",
+          "fr": "Temps restant jusqu'à l'ajustement de la difficulté",
+          "it": "Tempo rimanente alla regolazione della difficoltà",
+          "es": "Tiempo restante hasta el ajuste de la dificultad",
+          "pl": "Pozostały czas na dostosowanie trudności",
+          "uk": "Час, що залишився до адаптації до складності",
+          "zh-cn": "Remaining Time to Difficulty Adjustment"
+        },
+        "type": "string",
+        "role": "text",
+        "read": true,
+        "write": false,
+        "desc": "Remaining time until the next difficulty adjustment"
+      }
+    },
+    {
+      "_id": "network.remainingTimeToHalving",
+      "type": "state",
+      "common": {
+        "name": {
+          "en": "Remaining Time to Halving",
+          "de": "Verbleibende Zeit bis zum Halving",
+          "ru": "Оставшееся время до сокращения вдвое",
+          "pt": "Tempo restante para reduzir para metade",
+          "nl": "Resterende tijd tot halvering",
+          "fr": "Temps restant jusqu'à la division en deux",
+          "it": "Tempo rimanente al dimezzamento",
+          "es": "Tiempo restante hasta la reducción a la mitad",
+          "pl": "Pozostały czas do zmniejszenia o połowę",
+          "uk": "Час, що залишився до скорочення вдвічі",
+          "zh-cn": "Remaining Time to Halving"
+        },
+        "type": "string",
+        "role": "text",
+        "read": true,
+        "write": false,
+        "desc": "Remaining time until the next halving"
+      }
+    },
+    {
+      "_id": "mempool",
+      "type": "channel",
+      "common": {
+        "name": {
+          "en": "Mempool Information",
+          "de": "Mempool-Informationen",
+          "ru": "Информация о мемпуле",
+          "pt": "Informações sobre o Mempool",
+          "nl": "Mempool Informatie",
+          "fr": "Informations sur Mempool",
+          "it": "Informazioni su Mempool",
+          "es": "Información sobre Mempool",
+          "pl": "Informacje o Mempool",
+          "uk": "Інформація про пул пам'яті",
+          "zh-cn": "Mempool Information"
+        }
+      },
+      "native": {}
+    },
+    {
+      "_id": "mempool.transactionCount",
+      "type": "state",
+      "common": {
+        "name": {
+          "en": "Unconfirmed Transactions",
+          "de": "Unbestätigte Transaktionen",
+          "ru": "Неподтвержденные сделки",
+          "pt": "Transacções não confirmadas",
+          "nl": "Niet-bevestigde transacties",
+          "fr": "Transactions non confirmées",
+          "it": "Transazioni non confermate",
+          "es": "Transacciones no confirmadas",
+          "pl": "Niepotwierdzone transakcje",
+          "uk": "Непідтверджені транзакції",
+          "zh-cn": "Unconfirmed Transactions"
+        },
+        "type": "number",
+        "role": "value",
+        "read": true,
+        "write": false,
+        "desc": "Number of unconfirmed transactions in the mempool"
+      }
+    }
+  ]
 }
