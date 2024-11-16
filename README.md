@@ -132,6 +132,10 @@ The adapter creates automatically the following channels and states:
 	### **WORK IN PROGRESS**
 -->
 
+### **WORK IN PROGRESS**
+
+-   (Hans-Wurst-21) npm release
+
 ### 0.0.2 (2024-11-16)
 
 -   (Hans-Wurst-21) fix issue from ioBroker-Bot
