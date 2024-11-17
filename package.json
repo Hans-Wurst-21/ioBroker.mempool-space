@@ -1,6 +1,6 @@
 {
   "name": "iobroker.mempool-space",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Mempool.space Websocket",
   "author": {
     "name": "Hans-Wurst-21",

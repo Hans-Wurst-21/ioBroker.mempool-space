@@ -131,8 +131,7 @@ The adapter creates automatically the following channels and states:
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 0.0.3 (2024-11-17)
 
 -   (Hans-Wurst-21) fix issue from ioBroker-Bot
 -   (Hans-Wurst-21) add bluefox at npm
