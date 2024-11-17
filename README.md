@@ -22,7 +22,7 @@
 
 Live data from mempool.space WebSocket API.
 
-This adapter provides real-time Bitcoin network information using WebSocket connections to the mempool.space API. It offers a wide range of data points including block information, transaction fees, network statistics ans price conversions ()
+This adapter provides real-time Bitcoin network information using WebSocket connections to the mempool.space API. It offers a wide range of data points including block information, transaction fees, network statistics ans price conversions.
 
 ## Live data websocket
 
@@ -135,6 +135,10 @@ The adapter creates automatically the following channels and states:
 ### **WORK IN PROGRESS**
 
 -   (Hans-Wurst-21) fix issue from ioBroker-Bot
+-   (Hans-Wurst-21) add bluefox at npm
+-   (Hans-Wurst-21) correction readme
+-   (Hans-Wurst-21) set ioBroker.admin to '>=6.17.14'
+-   (Hans-Wurst-21) add responsive design for adminconfig
 
 ### 0.0.2 (2024-11-16)
 
