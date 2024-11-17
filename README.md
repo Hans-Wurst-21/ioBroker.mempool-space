@@ -131,18 +131,16 @@ The adapter creates automatically the following channels and states:
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+
+### **WORK IN PROGRESS**
+
+-   (Hans-Wurst-21) fix issue from ioBroker-Bot
+
 ### 0.0.2 (2024-11-16)
 
 -   (Hans-Wurst-21) npm release
-
-### 0.0.2 (2024-11-16)
-
 -   (Hans-Wurst-21) fix issue from ioBroker-Bot
 -   (Hans-Wurst-21) prepare for npm upload
-
-### 0.0.1 (2024-11-15)
-
--   (Hans-Wurst-21) initial release
 
 ## To-do
 
