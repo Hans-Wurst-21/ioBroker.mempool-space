@@ -20,7 +20,7 @@ class MempoolSpace extends utils.Adapter {
         this.log.info('mempool-space adapter is ready');
         const websocketUrl = this.config.websocketUrl || 'wss://mempool.space/api/v1/ws';
         this.initWebSocket(websocketUrl);
-        this.updateInterval = setInterval(() => {
+        this.updateInterval = this.setInterval(() => {
             this.updateTimeSinceLastBlock();
             this.updateRemainingTimes();
         }, 60000); // Aktualisiere jede Minute
@@ -200,7 +200,7 @@ class MempoolSpace extends utils.Adapter {
                 this.setState('info.connection', { val: false, ack: true });
             }
             if (this.updateInterval) {
-                clearInterval(this.updateInterval);
+                this.clearInterval(this.updateInterval);
             }
             callback();
         } catch (e) {
