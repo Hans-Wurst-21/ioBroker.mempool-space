@@ -60,22 +60,32 @@ class MempoolSpace extends utils.Adapter {
         if (data.conversions) {
             this.setState('conversion.usd', { val: data.conversions.USD, ack: true });
             this.setState('conversion.eur', { val: data.conversions.EUR, ack: true });
-            this.setState('conversion.timestamp', { val: data.conversions.time, ack: true });
+            this.setState('conversion.timestamp', {
+                val: data.conversions.time,
+                ack: true,
+            });
 
             const satoshisPerBTC = 100000000;
             const moscowTimeUSD = Math.floor(satoshisPerBTC / data.conversions.USD);
             const moscowTimeEUR = Math.floor(satoshisPerBTC / data.conversions.EUR);
 
-            const formatMoscowTime = (value) => {
+            const formatMoscowTime = value => {
                 const strValue = value.toString().padStart(4, '0');
-                return strValue.slice(0, 2) + ':' + strValue.slice(2);
+                // return strValue.slice(0, 2) + ':' + strValue.slice(2);
+                return `${strValue.slice(0, 2)}:${strValue.slice(2)}`;
             };
 
             const formattedMoscowTimeUSD = formatMoscowTime(moscowTimeUSD);
             const formattedMoscowTimeEUR = formatMoscowTime(moscowTimeEUR);
 
-            this.setState('conversion.moscowtimeUSD', { val: formattedMoscowTimeUSD, ack: true });
-            this.setState('conversion.moscowtimeEUR', { val: formattedMoscowTimeEUR, ack: true });
+            this.setState('conversion.moscowtimeUSD', {
+                val: formattedMoscowTimeUSD,
+                ack: true,
+            });
+            this.setState('conversion.moscowtimeEUR', {
+                val: formattedMoscowTimeEUR,
+                ack: true,
+            });
         }
     }
 
@@ -91,12 +101,21 @@ class MempoolSpace extends utils.Adapter {
 
     processBlockData(data) {
         if (data.block) {
-            this.setState('block.height', { val: Number(data.block.height), ack: true });
+            this.setState('block.height', {
+                val: Number(data.block.height),
+                ack: true,
+            });
             this.setState('block.hash', { val: data.block.id, ack: true });
-            this.setState('block.timestamp', { val: data.block.timestamp, ack: true });
+            this.setState('block.timestamp', {
+                val: data.block.timestamp,
+                ack: true,
+            });
             this.updateTimeSinceLastBlock();
             if (data.block.extras && data.block.extras.pool) {
-                this.setState('block.miningPool', { val: data.block.extras.pool.name, ack: true });
+                this.setState('block.miningPool', {
+                    val: data.block.extras.pool.name,
+                    ack: true,
+                });
             }
         }
     }
@@ -107,18 +126,30 @@ class MempoolSpace extends utils.Adapter {
             if (data.da.timeAvg) {
                 const avgBlockTimeMinutes = data.da.timeAvg / 60; // Umrechnung von Sekunden in Minuten
                 const roundedMinutes = Math.round(avgBlockTimeMinutes / 100) / 10; // Runden auf eine Dezimalstelle
-                this.setState('network.averageBlockTime', { val: roundedMinutes, ack: true });
+                this.setState('network.averageBlockTime', {
+                    val: roundedMinutes,
+                    ack: true,
+                });
             }
             if (data.da.difficultyChange) {
                 const roundedDifficultyChange = Math.round(data.da.difficultyChange * 100) / 100;
-                this.setState('network.difficultyChange', { val: roundedDifficultyChange, ack: true });
+                this.setState('network.difficultyChange', {
+                    val: roundedDifficultyChange,
+                    ack: true,
+                });
             }
             if (data.da.previousRetarget) {
                 const roundedPreviousDifficultyChange = Math.round(data.da.previousRetarget * 100) / 100;
-                this.setState('network.previousDifficultyChange', { val: roundedPreviousDifficultyChange, ack: true });
+                this.setState('network.previousDifficultyChange', {
+                    val: roundedPreviousDifficultyChange,
+                    ack: true,
+                });
             }
             if (data.da.estimatedRetargetDate) {
-                this.setState('network.nextDifficultyAdjustment', { val: data.da.estimatedRetargetDate, ack: true });
+                this.setState('network.nextDifficultyAdjustment', {
+                    val: data.da.estimatedRetargetDate,
+                    ack: true,
+                });
             }
         }
         this.updateRemainingTimes();
@@ -126,10 +157,16 @@ class MempoolSpace extends utils.Adapter {
 
     processMempoolData(data) {
         if (data.mempoolInfo) {
-            this.setState('mempool.transactionCount', { val: data.mempoolInfo.size, ack: true });
+            this.setState('mempool.transactionCount', {
+                val: data.mempoolInfo.size,
+                ack: true,
+            });
             if (data.mempoolInfo.vsize) {
                 const vsizeMB = data.mempoolInfo.vsize / 1000000;
-                this.setState('mempool.size', { val: Math.round(vsizeMB * 100) / 100, ack: true });
+                this.setState('mempool.size', {
+                    val: Math.round(vsizeMB * 100) / 100,
+                    ack: true,
+                });
             }
         }
     }
@@ -142,7 +179,10 @@ class MempoolSpace extends utils.Adapter {
                 const elapsedTime = currentTime - Number(lastBlockTimestamp);
                 const minutesPassed = Math.floor(elapsedTime / 60);
                 const timeSinceLastBlock = `vor ${minutesPassed} Minuten`;
-                this.setState('block.timeSinceLastBlock', { val: timeSinceLastBlock, ack: true });
+                this.setState('block.timeSinceLastBlock', {
+                    val: timeSinceLastBlock,
+                    ack: true,
+                });
             }
         });
     }
@@ -154,7 +194,10 @@ class MempoolSpace extends utils.Adapter {
                 const now = DateTime.now();
                 const remainingDays = nextDifficultyAdjustment.diff(now, 'days').days;
                 const formattedDays = remainingDays.toFixed(1);
-                this.setState('network.remainingTimeToDifficulty', { val: `in ${formattedDays} Tagen`, ack: true });
+                this.setState('network.remainingTimeToDifficulty', {
+                    val: `in ${formattedDays} Tagen`,
+                    ack: true,
+                });
             }
         });
 
@@ -211,7 +254,7 @@ class MempoolSpace extends utils.Adapter {
 }
 
 if (require.main !== module) {
-    module.exports = (options) => new MempoolSpace(options);
+    module.exports = options => new MempoolSpace(options);
 } else {
     new MempoolSpace();
 }
