@@ -16,15 +16,13 @@
 
 **Tests:** ![Test and Release](https://github.com/Hans-Wurst-21/ioBroker.mempool-space/workflows/Test%20and%20Release/badge.svg)
 
-## The adapter is under development and can change daily! Not intended for productive use.
-
 ### Experience the Bitcoin network up close in your home!
 
 Live data from mempool.space WebSocket API.
 
 This adapter provides real-time Bitcoin network information using WebSocket connections to the mempool.space API. It offers a wide range of data points including block information, transaction fees, network statistics ans price conversions.
 
-## Live data websocket
+It takes several minutes for all the data to be transferred. Wait at least 2 blocks.
 
 **Important: The adapter or mempool.space will never ask for your seed!**
 
@@ -32,45 +30,47 @@ This adapter provides real-time Bitcoin network information using WebSocket conn
 
 **If you share your seed you will lose 100% of everything!**
 
+## Live data websocket
+
 ### Features
 
 1. **Real-time Data**: Utilizes WebSocket connections for live updates from the Bitcoin network.
 
 2. **Price Conversions**:
 
-    - Bitcoin to USD and EUR conversion rates
-    - "Moscow Time" representation (Satoshis per USD/EUR)
+   - Bitcoin to USD and EUR conversion rates
+   - "Moscow Time" representation (Satoshis per USD/EUR)
 
 3. **Transaction Fees**:
 
-    - Fastest, Half-Hour, Hour, Economy, and Minimum fee rates
+   - Fastest, Half-Hour, Hour, Economy, and Minimum fee rates
 
 4. **Block Information**:
 
-    - Latest block height, hash, and timestamp
-    - Time since last block
-    - Mining pool that mined the last block
+   - Latest block height, hash, and timestamp
+   - Time since last block
+   - Mining pool that mined the last block
 
 5. **Network Statistics**:
 
-    - Average block time
-    - Current and previous difficulty adjustments
-    - Estimated time until next difficulty adjustment
-    - Estimated time until next halving
+   - Average block time
+   - Current and previous difficulty adjustments
+   - Estimated time until next difficulty adjustment
+   - Estimated time until next halving
 
 6. **Mempool Information**:
-    - Number of unconfirmed transactions
+   - Number of unconfirmed transactions
 
 ### Configuration
 
 In the adapter settings, you can configure the following option:
 
--   **WebSocket URL**:
-    The URL for the mempool.space WebSocket API
-    (default: `wss://mempool.space/api/v1/ws`)
+- **WebSocket URL**:
+  The URL for the mempool.space WebSocket API
+  (default: `wss://mempool.space/api/v1/ws`)
 
--   You can use a public or local mempool.space instance.
--   For a local instance, refer to the documentation of your bitcoin node software.
+- You can use a public or local mempool.space instance.
+- For a local instance, refer to the documentation of your bitcoin node software.
 
 No further configuration is required.
 All states and connections are created automatically by the adapter.
@@ -79,51 +79,51 @@ All states and connections are created automatically by the adapter.
 
 The adapter creates automatically the following channels and states:
 
--   **conversion**
+- **conversion**
 
-    -   usd: Bitcoin to USD conversion rate
-    -   eur: Bitcoin to EUR conversion rate
-    -   moscowtimeUSD: Moscow-Time USD
-    -   moscowtimeEUR: Moscow-Time EUR
-    -   timestamp: Timestamp of the last conversion update
+  - usd: Bitcoin to USD conversion rate
+  - eur: Bitcoin to EUR conversion rate
+  - moscowtimeUSD: Moscow-Time USD
+  - moscowtimeEUR: Moscow-Time EUR
+  - timestamp: Timestamp of the last conversion update
 
--   **fees**
+- **fees**
 
-    -   fastest: Fastest transaction fee rate
-    -   halfHour: Fee rate for confirmation within half an hour
-    -   hour: Fee rate for confirmation within an hour
-    -   economy: Economy fee rate
-    -   minimum: Minimum fee rate
+  - fastest: Fastest transaction fee rate
+  - halfHour: Fee rate for confirmation within half an hour
+  - hour: Fee rate for confirmation within an hour
+  - economy: Economy fee rate
+  - minimum: Minimum fee rate
 
--   **block**
+- **block**
 
-    -   height: Height of the latest block
-    -   hash: Hash of the latest block
-    -   timestamp: Timestamp of the latest block
-    -   miningPool: Name of the pool that mined the last block
-    -   timeSinceLastBlock: Time elapsed since the last block
+  - height: Height of the latest block
+  - hash: Hash of the latest block
+  - timestamp: Timestamp of the latest block
+  - miningPool: Name of the pool that mined the last block
+  - timeSinceLastBlock: Time elapsed since the last block
 
--   **network**
+- **network**
 
-    -   averageBlockTime: Average Blocktime
-    -   difficultyChange: Current difficulty adjustment (in percent)
-    -   previousDifficultyChange: Previous difficulty adjustment (in percent)
-    -   nextDifficultyAdjustment: Estimated timestamp of the next difficulty adjustment
-    -   remainingTimeToDifficulty: Remaining time until the next difficulty adjustment
-    -   remainingTimeToHalving: Remaining time until the next halving
+  - averageBlockTime: Average Blocktime
+  - difficultyChange: Current difficulty adjustment (in percent)
+  - previousDifficultyChange: Previous difficulty adjustment (in percent)
+  - nextDifficultyAdjustment: Estimated timestamp of the next difficulty adjustment
+  - remainingTimeToDifficulty: Remaining time until the next difficulty adjustment
+  - remainingTimeToHalving: Remaining time until the next halving
 
--   **mempool**
+- **mempool**
 
-    -   transactionCount: Number of unconfirmed transactions in the mempool
+  - transactionCount: Number of unconfirmed transactions in the mempool
 
--   **info**
-    -   connectionn: Indicates if the WebSocket connection is active
+- **info**
+  - connectionn: Indicates if the WebSocket connection is active
 
 ## Library
 
--   API-Documentation: https://mempool.space/docs/api/websocket
--   npm-Module: https://www.npmjs.com/package/@mempool/mempool.js
--   luxon-Module: https://github.com/moment/luxon
+- API-Documentation: https://mempool.space/docs/api/websocket
+- npm-Module: https://www.npmjs.com/package/@mempool/mempool.js
+- luxon-Module: https://github.com/moment/luxon
 
 ## Changelog
 
@@ -131,28 +131,37 @@ The adapter creates automatically the following channels and states:
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+
+### **WORK IN PROGRESS**
+
+- (Hans-Wurst-21) Integrate standard iobroker linter setup
+- (Hans-Wurst-21) Change setInterval/clearInterval to this.setInterval/clearInterval
+- (Hans-Wurst-21) clean icon and i18n from examples
+- (Hans-Wurst-21) change README.md
+- (Hans-Wurst-21) add to ioBroker-latest
+
 ### 0.0.3 (2024-11-17)
 
--   (Hans-Wurst-21) fix issue from ioBroker-Bot
--   (Hans-Wurst-21) add bluefox at npm
--   (Hans-Wurst-21) correction readme
--   (Hans-Wurst-21) set ioBroker.admin to '>=6.17.14'
--   (Hans-Wurst-21) add responsive design for adminconfig
+- (Hans-Wurst-21) fix issue from ioBroker-Bot
+- (Hans-Wurst-21) add bluefox at npm
+- (Hans-Wurst-21) correction readme
+- (Hans-Wurst-21) set ioBroker.admin to '>=6.17.14'
+- (Hans-Wurst-21) add responsive design for adminconfig
 
 ### 0.0.2 (2024-11-16)
 
--   (Hans-Wurst-21) npm release
--   (Hans-Wurst-21) fix issue from ioBroker-Bot
--   (Hans-Wurst-21) prepare for npm upload
+- (Hans-Wurst-21) npm release
+- (Hans-Wurst-21) fix issue from ioBroker-Bot
+- (Hans-Wurst-21) prepare for npm upload
 
 ## To-do
 
--   [ ] Complete translation
--   [ ] Clean up code
--   [ ] Add examples
--   [ ] Query of user-defined addresses
--   [ ] Query of user-defined transactions
--   [ ] Maybe telegram-bot
+- [ ] Complete translation
+- [ ] Clean up code
+- [ ] Add examples
+- [ ] Query of user-defined addresses
+- [ ] Query of user-defined transactions
+- [ ] Maybe telegram-bot
 
 ## Special Thanks
 
