@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "mempool-space",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "news": {
+      "0.0.4": {
+        "en": "Integrate standard iobroker linter setup\nChange setInterval/clearInterval to this.setInterval/clearInterval\nclean icon and i18n from examples\nchange README.md\nadd to ioBroker-latest",
+        "de": "Integrieren von Standard-Ibroker-Linter-Setup\nÄnderungssatz Interval/clearInterval zu diesem.setInterval/clearInterval\nsauberes icon und i18n von beispielen\nrEADME.md\nioBroker-latest",
+        "ru": "Интегрировать стандартный iobroker linter set\nИзменение Interval/clearInterval to this.setInterval/clearInterval\nчистая иконка и i18n из примеров\nrEADME.md\nдобавить в ioBroker-latest",
+        "pt": "Integrar a configuração padrão do linter iobroker\nConjunto de alterações Interval/clearInterval to this.setInterval/clearInterval\nícone limpo e i18n de exemplos\nmudança README.md\nadicionar ao teste ioBroker",
+        "nl": "Integreer standaard iobroker linter setup\nVerander set Interval/clearInterval naar deze.setInterval/clearInterval\nschoon pictogram en i18n uit voorbeelden\nrEADME.md wijzigen\nioBroker-laatste toevoegen",
+        "fr": "Intégrer la configuration standard iobroker linter\nModifier l'ensemble Intervalle/clearIntervalle à ce.setIntervalle/clearIntervalle\nicône propre et i18n des exemples\nchangement README.md\najouter à ioBroker-latest",
+        "it": "Integrare la configurazione standard iobroker linter\nModifica set Intervallo/clearInterval a questo.setInterval/clearInterval\nicona pulita e i18n da esempi\ncambiamento README.md\naggiungere a ioBroker-latest",
+        "es": "Integrar la configuración estándar de iobroker linter\nCambio Intervalo/clearIntervalo a este.setIntervalo/clearIntervalo\nicono limpio e i18n de ejemplos\ncambio README.md\nañadir a ioBroker-latest",
+        "pl": "Zintegrować standardowe ustawienie lintera iobrokera\nZmień zestaw Interval / clearInterval to this. setInterval / clearInterval\nczysta ikona i i18n z przykładów\nzmiana README.md\ndodaj do jOBroker- last",
+        "uk": "Інтеграція стандартної установки iobroker linter\nЗмінення Interval/clearInterval до цього.setInterval/clearInterval\nчистий значок і i18n з прикладів\nзмінити README.md\nдо ioBroker-latest",
+        "zh-cn": "整合标准 iobroster 接口设置\n更改设置 中间/ 清晰中间到此. set Interval/ clear Interval\n从示例中清除图标和 i18n\n更改 README.md\n添加到 ioBroker-latest 中"
+      },
       "0.0.3": {
         "en": "fix issue from ioBroker-Bot\nadd bluefox at npm\ncorrection readme\nset ioBroker.admin to '>=6.17.14'\nadd responsive design for adminconfig",
         "de": "problem behoben von ioBroker-Bot\nbluefox auf npm hinzufügen\nkorrekturlese\nioBroker.admin zu '>=6.17.14 '\nresponsive design für adminconfig hinzufügen",

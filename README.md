@@ -131,8 +131,7 @@ The adapter creates automatically the following channels and states:
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 0.0.4 (2024-11-27)
 
 - (Hans-Wurst-21) Integrate standard iobroker linter setup
 - (Hans-Wurst-21) Change setInterval/clearInterval to this.setInterval/clearInterval
