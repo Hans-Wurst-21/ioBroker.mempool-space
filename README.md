@@ -38,28 +38,28 @@ It takes several minutes for all the data to be transferred. Wait at least 2 blo
 
 2. **Price Conversions**:
 
-   - Bitcoin to USD and EUR conversion rates
-   - "Moscow Time" representation (Satoshis per USD/EUR)
+    - Bitcoin to USD and EUR conversion rates
+    - "Moscow Time" representation (Satoshis per USD/EUR)
 
 3. **Transaction Fees**:
 
-   - Fastest, Half-Hour, Hour, Economy, and Minimum fee rates
+    - Fastest, Half-Hour, Hour, Economy, and Minimum fee rates
 
 4. **Block Information**:
 
-   - Latest block height, hash, and timestamp
-   - Time since last block
-   - Mining pool that mined the last block
+    - Latest block height, hash, and timestamp
+    - Time since last block
+    - Mining pool that mined the last block
 
 5. **Network Statistics**:
 
-   - Average block time
-   - Current and previous difficulty adjustments
-   - Estimated time until next difficulty adjustment
-   - Estimated time until next halving
+    - Average block time
+    - Current and previous difficulty adjustments
+    - Estimated time until next difficulty adjustment
+    - Estimated time until next halving
 
 6. **Mempool Information**:
-   - Number of unconfirmed transactions
+    - Number of unconfirmed transactions
 
 ### Configuration
 
@@ -81,43 +81,43 @@ The adapter creates automatically the following channels and states:
 
 - **conversion**
 
-  - usd: Bitcoin to USD conversion rate
-  - eur: Bitcoin to EUR conversion rate
-  - moscowtimeUSD: Moscow-Time USD
-  - moscowtimeEUR: Moscow-Time EUR
-  - timestamp: Timestamp of the last conversion update
+    - usd: Bitcoin to USD conversion rate
+    - eur: Bitcoin to EUR conversion rate
+    - moscowtimeUSD: Moscow-Time USD
+    - moscowtimeEUR: Moscow-Time EUR
+    - timestamp: Timestamp of the last conversion update
 
 - **fees**
 
-  - fastest: Fastest transaction fee rate
-  - halfHour: Fee rate for confirmation within half an hour
-  - hour: Fee rate for confirmation within an hour
-  - economy: Economy fee rate
-  - minimum: Minimum fee rate
+    - fastest: Fastest transaction fee rate
+    - halfHour: Fee rate for confirmation within half an hour
+    - hour: Fee rate for confirmation within an hour
+    - economy: Economy fee rate
+    - minimum: Minimum fee rate
 
 - **block**
 
-  - height: Height of the latest block
-  - hash: Hash of the latest block
-  - timestamp: Timestamp of the latest block
-  - miningPool: Name of the pool that mined the last block
-  - timeSinceLastBlock: Time elapsed since the last block
+    - height: Height of the latest block
+    - hash: Hash of the latest block
+    - timestamp: Timestamp of the latest block
+    - miningPool: Name of the pool that mined the last block
+    - timeSinceLastBlock: Time elapsed since the last block
 
 - **network**
 
-  - averageBlockTime: Average Blocktime
-  - difficultyChange: Current difficulty adjustment (in percent)
-  - previousDifficultyChange: Previous difficulty adjustment (in percent)
-  - nextDifficultyAdjustment: Estimated timestamp of the next difficulty adjustment
-  - remainingTimeToDifficulty: Remaining time until the next difficulty adjustment
-  - remainingTimeToHalving: Remaining time until the next halving
+    - averageBlockTime: Average Blocktime
+    - difficultyChange: Current difficulty adjustment (in percent)
+    - previousDifficultyChange: Previous difficulty adjustment (in percent)
+    - nextDifficultyAdjustment: Estimated timestamp of the next difficulty adjustment
+    - remainingTimeToDifficulty: Remaining time until the next difficulty adjustment
+    - remainingTimeToHalving: Remaining time until the next halving
 
 - **mempool**
 
-  - transactionCount: Number of unconfirmed transactions in the mempool
+    - transactionCount: Number of unconfirmed transactions in the mempool
 
 - **info**
-  - connectionn: Indicates if the WebSocket connection is active
+    - connectionn: Indicates if the WebSocket connection is active
 
 ## Library
 
@@ -131,6 +131,11 @@ The adapter creates automatically the following channels and states:
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+
+### **WORK IN PROGRESS**
+
+- (Hans-Wurst-21) Update version chai, @types/chai, chai-as-promised, @types/node, eslint, sinon-chai
+
 ### 0.0.4 (2024-11-27)
 
 - (Hans-Wurst-21) Integrate standard iobroker linter setup
