@@ -20,7 +20,7 @@
         "url": "https://github.com/Hans-Wurst-21/ioBroker.mempool-space.git"
     },
     "engines": {
-        "node": ">= 18"
+        "node": ">= 22"
     },
     "dependencies": {
         "@iobroker/adapter-core": "^3.2.3",
