@@ -158,6 +158,8 @@ The adapter creates automatically the following channels and states:
 - (Hans-Wurst-21) fix issue from ioBroker-Bot
 - (Hans-Wurst-21) prepare for npm upload
 
+[Older changelogs can be found there](CHANGELOG_OLD.md)
+
 ## To-do
 
 - [ ] Complete translation
